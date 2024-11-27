@@ -17,14 +17,14 @@ export function MobileMenu({ isOpen, showMenu }: { isOpen: boolean, showMenu: Di
                         goHome()
                     }} href="/">Home</Link>
                     <Link href="#">Get App</Link>
-                    <Link onClick={() => goHome()} href="/faq">FAQ</Link>
+                    <Link onClick={() => showMenu(false)} href="/faq">FAQ</Link>
                 </div>
 
                 <div className="text-[#929292] text-[14px] leading-[18px] flex justify-between items-end">
                     <div className="flex flex-col mt-auto">
                         <Link className=" hover:text-white" href="/form">Help Center</Link>
                         <Link className=" hover:text-white" href="/terms">Terms of use</Link>
-                        <Link className=" hover:text-white" href="/policy">Privacy Policy</Link>
+                        <Link onClick={() => showMenu(false)} className=" hover:text-white" href="/policy">Privacy Policy</Link>
                     </div>
                     <div>
                         <Link className=" hover:text-white" href={"#"}>Instagram</Link>

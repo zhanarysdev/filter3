@@ -7,6 +7,7 @@ import { Icon } from "./icons"
 import { MobileMenu } from "./mobile-menu"
 import { store } from "@/store"
 import { SelectLang } from "./select-lang"
+import Link from "next/link"
 
 export function Header() {
     const [isOpen, showMenu] = useState(false)
@@ -15,7 +16,7 @@ export function Header() {
         <Container>
             <div className="flex justify-between items-center">
                 {
-                    isOpen ? <div className="z-20"><SelectLang /></div> : <Icon name="Logo" />
+                    isOpen ? <div className="z-20"><SelectLang /></div> : <Link href={"/"}><Icon name="Logo" /></Link>
                 }
                 {!isFooterOpened && <BurgerMenu isOpen={isOpen} showMenu={showMenu} />}
             </div>
