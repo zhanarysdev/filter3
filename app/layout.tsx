@@ -5,6 +5,7 @@ import "./globals.css";
 import "../i18n"
 import { Footer } from "@/components/footer";
 import { Overlay } from "@/components/overlay";
+import { Accept } from "@/components/accept";
 
 const manrope = Manrope({
   variable: "--font-manrope-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Overlay />
+        <Accept />
         <Footer />
       </body>
     </html>

@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 export default function Home() {
   const { i18n } = useTranslation()
   const setLang = store(state => state.setLang)
+  const accept = store(state => state.accept)
 
   useEffect(() => {
     const selectedLang = localStorage.getItem("lang");
@@ -19,6 +20,13 @@ export default function Home() {
       i18n.changeLanguage("en");
     }
   }, [setLang, i18n]);
+
+  useEffect(() => {
+    const isAccept = localStorage.getItem("accept");
+    if (isAccept) {
+      accept()
+    }
+  }, [accept]);
 
   return (
     <AnimatePresence mode="wait">

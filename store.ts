@@ -12,7 +12,9 @@ interface IStore {
     direction: string,
     setDirection: (v: string) => void,
     isExploreHidden: boolean,
-    hideExplore: () => void
+    hideExplore: () => void,
+    isAccept: boolean,
+    accept: () => void
 }
 
 export const store = create<IStore>((set) => ({
@@ -31,4 +33,9 @@ export const store = create<IStore>((set) => ({
     setDirection: (v) => set({ direction: v }),
     isExploreHidden: false,
     hideExplore: () => set({ isExploreHidden: true }),
+    isAccept: false,
+    accept: () => {
+        set({ isAccept: true })
+        localStorage.setItem("accept", "true")
+    }
 }))
