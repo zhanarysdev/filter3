@@ -84,9 +84,10 @@ export function Section() {
             </div>
             <motion.div key={`${data[index].key} - ${index}}`} initial={{ opacity: 0 }} exit={{ opacity: 0 }} animate={{ opacity: 1 }} className="xl:flex-1 relative flex-auto mt-[32px] md:mt-[152px] xl:mt-0">
                 {
-                    data[index].img ? <Image src={data[index].img} alt={""} fill sizes="100% 100%" objectFit="cover" /> : <video muted width="100%" height={'100%'} loop autoPlay={true}>
+                    data[index].img ? <Image src={data[index].img} alt={""} fill sizes="100% 100%" objectFit="cover" /> : <div className="absolute top-0 right-0 left-0 bottom-0"><video muted className="w-full h-full object-cover" loop autoPlay={true}>
                         <source src={data[index].video} />
                     </video>
+                    </div>
                 }
             </motion.div>
         </section >
