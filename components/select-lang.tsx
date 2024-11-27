@@ -25,20 +25,20 @@ export function SelectLang() {
     return (
         <div className="relative max-w-96 z-50">
             <div className={` flex xl:flex  items-center gap-[10px] cursor-pointer relative`} onClick={() => setOpen(true)}>
-                <div className="text-lg text-[#F0F0F0] xl:text-primary font-medium">{selected.label}</div>
+                <div className="text-[14px] leading-[18px] md:leading-[20px] xl:text-[18px] xl:leading-[24px]  text-[#F0F0F0] xl:text-primary font-medium">{selected.label}</div>
                 <Icon name="CaretDown" className="fill-[#F0F0F0] xl:fill-primary" />
             </div>
-            <div className={isOpen ? `flex absolute top-0 left-0` : `hidden`}>
-                <ul className="bg-[#F8F8F8] rounded-lg p-[10px] w-[227px]">
+            <div className={isOpen ? `flex absolute top-0 right-0` : `hidden`}>
+                <ul className="bg-[#F8F8F8] rounded-lg p-[10px] w-[227px] flex flex-col  xl:gap-[5px]">
                     <li className="flex items-center justify-between gap-[10px] cursor-pointer" onClick={() => setOpen(false)}>
-                        <Link className="text-lg font-medium" href={selected.href}>{selected.label}</Link>
+                        <Link className="text-[14px] leading-[18px] xl:text-[18px] xl:leading-[24px] md:leading-[20px] font-medium" href={selected.href}>{selected.label}</Link>
                         <div className="rotate-180 transition-all">            <Icon name="CaretDown" /></div>
                     </li>
-                    {data.map((el) => <li className="flex justify-between items-center" key={el.label} onClick={() => {
+                    {data.map((el) => <li className="flex text-[14px] leading-[18px] xl:text-[18px] xl:leading-[24px] md:leading-[20px] justify-between items-center" key={el.label} onClick={() => {
                         changeLang(el)
                         setOpen(false)
                     }}>
-                        <Link className={`text-lg font-medium text-[#929292] hover:text-[#373737]`} style={(selected.label == el.label) ? { color: "#373737" } : {}} href={el.href}>{el.label}</Link>
+                        <Link className={`text-[14px] leading-[18px] md:leading-[20px]  xl:text-[18px] xl:leading-[24px]font-medium text-[#929292] hover:text-[#373737]`} style={(selected.label == el.label) ? { color: "#373737" } : {}} href={el.href}>{el.label}</Link>
                         {(selected.label == el.label) && <Icon name="Pass" />}
                     </li>)}
                 </ul>

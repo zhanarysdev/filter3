@@ -9,9 +9,11 @@ export function wheel(e: WheelEvent<HTMLElement>, length: number) {
     const showFooter = store.getState().showFooter
     const increment = store.getState().increment
     const decrement = store.getState().decrement
+    const hideExplore = store.getState().hideExplore
 
     if (e.deltaY > 0 && index < length) {
         increment()
+        hideExplore()
     }
 
     if (e.deltaY > 0 && index === length) {

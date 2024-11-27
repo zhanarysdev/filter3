@@ -12,13 +12,19 @@ import Link from "next/link"
 export function Header() {
     const [isOpen, showMenu] = useState(false)
     const isFooterOpened = store((state) => state.isFooterOpened)
-    return <header>
+    const goHome = store((state) => state.goHome)
+
+    return <header className="xl:fixed xl:top-[20px] xl:right-[50%]  xl:left-0">
         <Container>
             <div className="flex justify-between items-center">
                 {
-                    isOpen ? <div className="z-20"><SelectLang /></div> : <Link href={"/"}><Icon name="Logo" /></Link>
+                    isOpen ? <div className="z-20"><SelectLang /></div> : <Link href={"/"} onClick={goHome}><Icon name="Logo" className="md:w-[121px] md:h-[40px]" /></Link>
                 }
                 {!isFooterOpened && <BurgerMenu isOpen={isOpen} showMenu={showMenu} />}
+
+                <div className="hidden xl:flex">
+                    <SelectLang />
+                </div>
             </div>
             <MobileMenu isOpen={isOpen} showMenu={showMenu} />
         </Container>

@@ -19,6 +19,8 @@ export function Section() {
     const showFooter = store(state => state.showFooter)
     const increment = store(state => state.increment)
     const decrement = store(state => state.decrement)
+    const setDirection = store(state => state.setDirection)
+    const hideExplore = store(state => state.hideExplore)
 
     const [inix, setinix] = useState<null | number>(null)
     const [iniy, setiniy] = useState<null | number>(null)
@@ -44,6 +46,8 @@ export function Section() {
 
             if (diffY > 0 && index < data.length - 1) {
                 increment()
+                setDirection("down")
+                hideExplore()
             }
 
             if (diffY > 0 && index === data.length - 1) {
@@ -52,6 +56,7 @@ export function Section() {
 
             if (diffY < 0 && index !== 0) {
                 decrement()
+                setDirection("up")
             }
         }
         setinix(null)
@@ -59,23 +64,25 @@ export function Section() {
     };
 
     return (
-        <section className="h-full flex flex-col mt-[32px]" onWheel={e => wheel(e, data.length - 1)} onTouchStart={startTouch} onTouchMove={moveTouch}>
-            <Container>
-                <Animate id={`${data[index].img} - ${data[index].title}`}>
-                    <Title data={t(data[index].title)} />
-                </Animate>
-                <div className="mt-[8px] mb-[16px]">
-                    <Animate id={`${data[index].key} - ${data[index].text}`}>
-                        <Text data={t(data[index].text)} />
+        <section className="h-full  flex flex-col xl:flex-row mt-[32px] md:mt-[40px] xl:mt-0" onWheel={e => wheel(e, data.length - 1)} onTouchStart={startTouch} onTouchMove={moveTouch}>
+            <div className="xl:pt-[280px] xl:flex-1 xl:bg-white">
+                <Container>
+                    <Animate id={`${data[index].img} - ${data[index].title}`}>
+                        <Title data={t(data[index].title)} />
                     </Animate>
-                </div>
-                {
-                    data[index].buttons && <Animate id={`${data[index].buttons}`}>
-                        <Buttons variant={data[index].buttons} />
-                    </Animate>
-                }
-            </Container>
-            <motion.div key={`${data[index].key} - ${index}}`} initial={{ opacity: 0 }} exit={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative flex-auto mt-[32px]">
+                    <div className="mt-[8px] mb-[16px] md:my-[20px] max-w-[366px]">
+                        <Animate id={`${data[index].key} - ${data[index].text}`}>
+                            <Text data={t(data[index].text)} />
+                        </Animate>
+                    </div>
+                    {
+                        data[index].buttons && <Animate id={`${data[index].buttons}`}>
+                            <Buttons variant={data[index].buttons} />
+                        </Animate>
+                    }
+                </Container>
+            </div>
+            <motion.div key={`${data[index].key} - ${index}}`} initial={{ opacity: 0 }} exit={{ opacity: 0 }} animate={{ opacity: 1 }} className="xl:flex-1 relative flex-auto mt-[32px] md:mt-[152px] xl:mt-0">
                 {
                     data[index].img ? <Image src={data[index].img} alt={""} fill sizes="100% 100%" objectFit="cover" /> : <video muted width="100%" height={'100%'} loop autoPlay={true}>
                         <source src={data[index].video} />

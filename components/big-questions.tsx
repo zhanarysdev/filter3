@@ -1,30 +1,19 @@
 'use client'
-import { xswiper } from "@/helpers";
-import { Dispatch, SetStateAction, useState } from "react";
 import { data } from "@/faq-data";
-import { Title } from "./title";
-import { Icon } from "./icons";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
+import { Dispatch, SetStateAction, useState } from "react";
+import { Icon } from "./icons";
+import { Title } from "./title";
+import { Container } from "./container";
 
-export function Questions({ selected, setSelected }: { selected: null | number, setSelected: Dispatch<SetStateAction<null | number>> }) {
+export function BigQuestions({ selected }: { selected: null | number }) {
 
     const [curent, setCurent] = useState<number>(0)
 
-    const [inix, setinix] = useState<null | number>(null)
-    const [iniy, setiniy] = useState<null | number>(null)
-
-    function startTouch(e: any) {
-        setinix(e.touches[0].clientX)
-        setiniy(e.touches[0].clientY)
-    };
-    function goBack() {
-        setCurent(0)
-        setSelected(null)
-    }
 
     return (
-        <div onTouchStart={startTouch} onTouchMove={e => xswiper(e, inix, iniy, setinix, setiniy, goBack)} className="xl:hidden fixed top-[74px] md:top-[104px] left-0 right-0 px-[16px] md:px-[20px] bottom-0 pb-[16px] md:pb-[20px] bg-white transition-all" style={{ transform: selected !== null ? "translateX(0)" : "translateX(100vw)" }}>
+        <div className="flex-1 px-[16px] md:px-[20px]  pb-[16px]  md:pb-[20px] xl:py-[20px] bg-white transition-all">
             {
                 selected !== null && (
                     <AnimatePresence>

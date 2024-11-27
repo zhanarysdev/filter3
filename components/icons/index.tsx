@@ -1,4 +1,5 @@
 import { AppStore } from "./app-store";
+import { ArrowDown } from "./arrow-down";
 import { CaretDown } from "./caret-down";
 import { Filter } from "./filter";
 import { Logo } from "./logo";
@@ -17,7 +18,8 @@ const icons = {
     Pass,
     Search,
     Plus,
-    Minus
+    Minus,
+    ArrowDown
 };
 
 export const Icon = ({ name, className }: { name: keyof typeof icons; className?: string; }) => {

@@ -8,7 +8,11 @@ interface IStore {
     isFooterOpened: boolean,
     showFooter: (v: boolean) => void,
     lang: string,
-    setLang: (v: string) => void
+    setLang: (v: string) => void,
+    direction: string,
+    setDirection: (v: string) => void,
+    isExploreHidden: boolean,
+    hideExplore: () => void
 }
 
 export const store = create<IStore>((set) => ({
@@ -23,4 +27,8 @@ export const store = create<IStore>((set) => ({
         set({ lang: v })
         localStorage.setItem("lang", v)
     },
+    direction: "down",
+    setDirection: (v) => set({ direction: v }),
+    isExploreHidden: false,
+    hideExplore: () => set({ isExploreHidden: true }),
 }))

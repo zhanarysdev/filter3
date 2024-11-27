@@ -4,6 +4,7 @@ import { Manrope } from 'next/font/google';
 import "./globals.css";
 import "../i18n"
 import { Footer } from "@/components/footer";
+import { Overlay } from "@/components/overlay";
 
 const manrope = Manrope({
   variable: "--font-manrope-sans",
@@ -25,10 +26,11 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </head>
       <body
-        className={`${manrope.className} antialiased flex flex-col pt-4`}
+        className={`${manrope.className} antialiased flex flex-col pt-4 md:pt-5 xl:pt-0`}
       >
         <Header />
         {children}
+        <Overlay />
         <Footer />
       </body>
     </html>
