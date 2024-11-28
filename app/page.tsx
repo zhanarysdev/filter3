@@ -1,5 +1,6 @@
 "use client";
 
+import { MobileExplore } from "@/components/mobile-explore";
 import { Section } from "@/components/section";
 import { store } from "@/store";
 import { useEffect } from "react";
@@ -27,5 +28,10 @@ export default function Home() {
     }
   }, [accept]);
 
-  return <Section />;
+  return (
+    <>
+      <Section />
+      <MobileExplore />
+    </>
+  );
 }
