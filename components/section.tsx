@@ -118,6 +118,7 @@ export function Section() {
         ) : (
           <div className="absolute top-0 right-0 left-0 bottom-0 lg:p-[20px]">
             <video
+              playsInline
               muted
               className="w-full h-full object-cover"
               loop
