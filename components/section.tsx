@@ -74,7 +74,7 @@ export function Section() {
       onTouchStart={startTouch}
       onTouchMove={moveTouch}
     >
-      <div className="lg:pt-[280px] lg:flex-1 lg:bg-white">
+      <div className="lg:pt-[162px] xl:pt-[280px] lg:flex-1 lg:bg-white">
         <AnimatePresence mode="wait">
           <Container>
             {titles.map((el, index) => (
@@ -113,7 +113,7 @@ export function Section() {
             objectFit="cover"
           />
         ) : (
-          <div className="absolute top-0 right-0 left-0 bottom-0">
+          <div className="absolute top-0 right-0 left-0 bottom-0 lg:p-[20px]">
             <video
               muted
               className="w-full h-full object-cover"

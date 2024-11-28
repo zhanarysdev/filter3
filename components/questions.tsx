@@ -32,7 +32,7 @@ export function Questions({
     <div
       onTouchStart={startTouch}
       onTouchMove={(e) => xswiper(e, inix, iniy, setinix, setiniy, goBack)}
-      className="lg:hidden fixed top-[74px] md:top-[104px] left-0 right-0 px-[16px] md:px-[20px] bottom-0 pb-[16px] md:pb-[20px] bg-white transition-all"
+      className="fixed top-[58px] md:top-[84px] lg:top-0 left-0 lg:left-auto right-0 lg:right-auto bottom-0 lg:h-full lg:py-[20px] p-[16px] md:p-[20px] bg-white transition-all"
       style={{
         transform: selected !== null ? "translateX(0)" : "translateX(100vw)",
       }}
@@ -40,7 +40,9 @@ export function Questions({
       {selected !== null && (
         <AnimatePresence>
           <div className="flex flex-col justify-between md:justify-start h-full overflow-y-auto">
-            <Title data={data[selected].title} />
+            <h3 className="text-[30px] leading-[34px] font-bold lg:text-[27px] lg:leading-[32px]">
+              {data[selected].title}{" "}
+            </h3>
             <div className="mt-[16px] flex flex-col border-b border-[#929292] ">
               {data[selected].questions.map((el, index) => (
                 <div

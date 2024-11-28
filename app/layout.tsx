@@ -36,7 +36,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Overlay />
-        {/* <Accept /> */}
         <Footer />
       </body>
     </html>

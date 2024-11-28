@@ -1,5 +1,6 @@
 "use client";
 
+import { Accept } from "@/components/accept";
 import { MobileExplore } from "@/components/mobile-explore";
 import { Section } from "@/components/section";
 import { store } from "@/store";
@@ -32,6 +33,7 @@ export default function Home() {
     <>
       <Section />
       <MobileExplore />
+      <Accept />
     </>
   );
 }

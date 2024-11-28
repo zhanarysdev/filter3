@@ -45,7 +45,11 @@ export function MobileMenu({
             >
               Help Center
             </Link>
-            <Link className=" hover:text-white" href="/terms">
+            <Link
+              onClick={() => showMenu(false)}
+              className=" hover:text-white"
+              href="/terms"
+            >
               Terms of use
             </Link>
             <Link

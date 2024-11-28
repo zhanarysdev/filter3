@@ -62,8 +62,8 @@ export function Footer() {
         name="Filter"
         className="w-full h-auto md:mt-auto md:mb-[40px] lg:mb-auto"
       />
-      <div className="text-[#929292] text-[14px] leading-[18px] md:leading-[20px] flex justify-between items-end lg:text-[18px] lg:leading-[24px]">
-        <div className="flex flex-col gap-[8px]">
+      <div className="text-[#929292] text-[14px] leading-[18px] md:leading-[20px] flex justify-between items-end xl:text-[18px] xl:leading-[24px]">
+        <div className="flex flex-col gap-[2px] xl:gap-[5px]">
           <Link
             style={{ color: pathname === "/form" ? "#F0F0F0" : "" }}
             onClick={() => showFooter(false)}
