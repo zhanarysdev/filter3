@@ -17,7 +17,7 @@ export function Animate({ children, id }: { children: ReactNode, id: string }) {
     return (
         <div ref={ref} className='overflow-hidden'>
             <div className={`${height ? "hidden" : "invisible"}`}>{children}</div>
-            {height ? <motion.div key={id} initial={{ y: direction === "down" ? height : -height }} exit={{ y: direction === "down" ? -height : height }} transition={{ ease: 'linear', duration: .15 }} animate={{ y: 0 }}>{children}</motion.div> : null}
+            {height ? <motion.div key={id} initial={{ y: direction === "down" ? height : -height }} exit={{ y: direction === "down" ? -height : height }} transition={{ ease: 'linear', duration: .2 }} animate={{ y: 0 }}>{children}</motion.div> : null}
         </div>
     )
 
