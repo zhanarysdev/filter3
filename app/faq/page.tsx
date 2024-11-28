@@ -38,7 +38,7 @@ export default function Faq() {
               {categories.map((el, index) => (
                 <div
                   onClick={() => setSelected(index)}
-                  className="border border-[#929292] rounded-[16px] flex flex-col justify-center items-start gap-[8px] px-[12px] flex-1 min-w-[104px] md:w-[167px] min-h-[104px] md:h-[167px]"
+                  className="border border-[#929292] rounded-[16px] flex flex-col justify-center items-start gap-[8px] px-[12px] flex-1 min-w-[104px] md:min-w-[167px] min-h-[104px] md:min-h-[167px] xl:min-w-[148px] xl:min-h-[148px] hover:bg-primary hover:text-background cursor-pointer"
                   key={index}
                 >
                   <span className="text-[24px] md:text-[27px] md:leading-[30px] font-bold leading-[26px]">
