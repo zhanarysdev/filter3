@@ -78,13 +78,16 @@ export function Section() {
         <AnimatePresence mode="wait">
           <Container>
             {titles.map((el, index) => (
-              <Animate id={`${el} - ${index}`}>
+              <Animate key={`${el} - ${index}`} id={`${el} - ${index}`}>
                 <Title data={el} />
               </Animate>
             ))}
             <div className="mt-[8px] mb-[16px] md:my-[20px] max-w-[366px]">
               {texts.map((el, key) => (
-                <Animate id={`${el} - ${index} - ${key}`}>
+                <Animate
+                  key={`${el} - ${index} - ${key}`}
+                  id={`${el} - ${index} - ${key}`}
+                >
                   <Text data={el} />
                 </Animate>
               ))}
