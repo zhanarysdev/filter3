@@ -32,9 +32,9 @@ export default function Faq() {
             <div className="mt-[8px] md:my-[20px] mb-[16px]">
               <Text data="This may mean our list of supported countries and regions could differ from PayPal’s official list. While we strive to keep this list current, the supported locations may occasionally be updated by PayPal/Hyperwallet. For the most up-to-date information, please refer to PayPal support." />
             </div>
+            <Search value={value} onChange={searchHandler} />
           </div>
-          <Search value={value} onChange={searchHandler} />
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-[15px] mt-[31px]">
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-[15px] mt-[31px] lg:max-w-[619px]">
             {categories.map((el, index) => (
               <div
                 onClick={() => setSelected(index)}
