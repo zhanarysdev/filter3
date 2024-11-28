@@ -6,6 +6,7 @@ import "../i18n"
 import { Footer } from "@/components/footer";
 import { Overlay } from "@/components/overlay";
 import { Accept } from "@/components/accept";
+import { MobileExplore } from "@/components/mobile-explore";
 
 const manrope = Manrope({
   variable: "--font-manrope-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Overlay />
+        <MobileExplore/>
         <Accept />
         <Footer />
       </body>

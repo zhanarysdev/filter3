@@ -36,7 +36,7 @@ export function SelectLang() {
         <Icon name="CaretDown" className="fill-[#F0F0F0] xl:fill-primary" />
       </div>
       <div className={isOpen ? `flex absolute top-0 left-0 xl:right-0 xl:left-auto` : `hidden`}>
-        <ul className="bg-[#F8F8F8] rounded-lg p-[10px] w-[227px] flex flex-col  xl:gap-[5px]">
+        <ul className="bg-[#F8F8F8] rounded-lg p-[10px] w-[227px] flex flex-col gap-[5px]">
           <li
             className="flex items-center justify-between gap-[10px] cursor-pointer"
             onClick={() => setOpen(false)}
