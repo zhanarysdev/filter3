@@ -10,10 +10,12 @@ export function wheel(e: WheelEvent<HTMLElement>, length: number) {
     const increment = store.getState().increment
     const decrement = store.getState().decrement
     const hideExplore = store.getState().hideExplore
+    const setDirection = store.getState().setDirection
 
     if (e.deltaY > 0 && index < length) {
         increment()
         hideExplore()
+        setDirection("down")
     }
 
     if (e.deltaY > 0 && index === length) {
@@ -22,6 +24,7 @@ export function wheel(e: WheelEvent<HTMLElement>, length: number) {
 
     if (e.deltaY < 0 && index !== 0) {
         decrement()
+        setDirection("up")
     }
 
 }
