@@ -31,7 +31,7 @@ export default function RootLayout({
         ></meta>
       </head>
       <body
-        className={`${manrope.className} antialiased flex flex-col pt-4 md:pt-5 xl:pt-0`}
+        className={`${manrope.className} antialiased flex flex-col pt-4 md:pt-5 lg:pt-0`}
       >
         <Header />
         {children}

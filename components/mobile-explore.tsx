@@ -8,7 +8,7 @@ export function MobileExplore() {
   return (
     <>
       {!isExploreHidden && (
-        <div className="flex xl:hidden fixed bottom-[16px] justify-center w-full">
+        <div className="flex lg:hidden fixed bottom-[16px] justify-center w-full">
           <div className="flex bg-[#F8F8F8] rounded-[4px] pl-[4px] pr-[8px] py-[3px] items-center justify-center">
             <div className="h-[26px] w-[26px] overflow-hidden">
               <motion.div

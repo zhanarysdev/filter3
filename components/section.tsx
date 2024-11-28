@@ -69,12 +69,12 @@ export function Section() {
 
   return (
     <section
-      className="h-full  flex flex-col xl:flex-row mt-[32px] md:mt-[40px] xl:mt-0"
+      className="h-full  flex flex-col lg:flex-row mt-[32px] md:mt-[40px] lg:mt-0"
       onWheel={(e) => wheel(e, data.length - 1)}
       onTouchStart={startTouch}
       onTouchMove={moveTouch}
     >
-      <div className="xl:pt-[280px] xl:flex-1 xl:bg-white">
+      <div className="lg:pt-[280px] lg:flex-1 lg:bg-white">
         <AnimatePresence mode="wait">
           <Container>
             {titles.map((el, index) => (
@@ -102,7 +102,7 @@ export function Section() {
         initial={{ opacity: 0 }}
         exit={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="xl:flex-1 relative flex-auto mt-[32px] md:mt-[152px] xl:mt-0"
+        className="lg:flex-1 relative flex-auto mt-[32px] md:mt-[152px] lg:mt-0"
       >
         {data[index].img ? (
           <Image
