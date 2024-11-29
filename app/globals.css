@@ -8,13 +8,15 @@
 
   --white: #f0f0f0;
   --primary: #373737;
+  --app-height: 100vh;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--manrope);
-  height: 100vh;
+  height: var(--app-height);
+  overflow: hidden;
 }
 
 @layer utilities {
