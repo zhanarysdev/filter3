@@ -19,9 +19,7 @@ export function Header() {
       <Container>
         <div className="flex justify-between items-center">
           {isOpen ? (
-            <div className="z-20">
-              <SelectLang />
-            </div>
+            <div className="z-20">{/* <SelectLang /> */}</div>
           ) : (
             <Link href={"/"} onClick={goHome}>
               <Icon name="Logo" className="md:w-[121px] md:h-[40px]" />
@@ -31,9 +29,7 @@ export function Header() {
             <BurgerMenu isOpen={isOpen} showMenu={showMenu} />
           )}
 
-          <div className="hidden lg:flex">
-            <SelectLang />
-          </div>
+          <div className="hidden lg:flex">{/* <SelectLang /> */}</div>
         </div>
         <MobileMenu isOpen={isOpen} showMenu={showMenu} />
       </Container>

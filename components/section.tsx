@@ -76,7 +76,7 @@ export function Section() {
     >
       <div className="lg:pt-[162px] xl:pt-[280px] lg:flex-1 lg:bg-white">
         <AnimatePresence mode="wait">
-          <Container>
+          <Container className="flex flex-col sm:items-center lg:items-start">
             {titles.map((el, index) => (
               <Animate key={`${el} - ${index}`} id={`${el} - ${index}`}>
                 <Title data={el} />
