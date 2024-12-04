@@ -74,9 +74,9 @@ export function Section() {
       onTouchStart={startTouch}
       onTouchMove={moveTouch}
     >
-      <div className="lg:pt-[162px] xl:pt-[280px] lg:flex-1 lg:bg-white">
+      <div className="lg:items-center lg:p-0 lg:flex lg:flex-1 lg:bg-white">
         <AnimatePresence mode="wait">
-          <Container className="flex flex-col sm:items-center lg:items-start">
+          <Container className="flex flex-col">
             {titles.map((el, index) => (
               <Animate key={`${el} - ${index}`} id={`${el} - ${index}`}>
                 <Title data={el} />
