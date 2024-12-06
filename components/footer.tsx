@@ -60,7 +60,7 @@ export function Footer() {
     >
       <Icon
         name="Filter"
-        className="w-full h-auto md:mt-auto md:mb-[40px] lg:mb-auto"
+        className="w-full text-[#545454] h-auto mt-auto mb-[60px] md:mb-[40px] lg:mb-auto"
       />
       <div className="text-[#929292] text-[14px] leading-[18px] md:leading-[20px] flex justify-between items-end xl:text-[18px] xl:leading-[24px]">
         <div className="flex flex-col gap-[2px] xl:gap-[5px]">

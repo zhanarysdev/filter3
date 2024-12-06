@@ -41,7 +41,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, minimal-ui"></meta>
       </head>
       <body
-        className={`${manrope.className} antialiased flex flex-col pt-4 md:pt-5 lg:pt-0`}
+        className={`${manrope.className} antialiased flex flex-col pt-[10px] md:pt-5 lg:pt-0`}
       >
         <Header />
         {children}

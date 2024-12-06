@@ -15,21 +15,16 @@ export function Header() {
   const goHome = store((state) => state.goHome);
 
   return (
-    <header className="lg:fixed lg:top-[20px] lg:right-[50%]  lg:left-0">
+    <header className="lg:fixed lg:top-[20px] lg:right-[50%] z-50 lg:left-0">
       <Container>
         <div className="flex justify-between items-center">
-          {isOpen ? (
-            <div className="z-20">{/* <SelectLang /> */}</div>
-          ) : (
-            <Link href={"/"} onClick={goHome}>
-              <Icon name="Logo" className="md:w-[121px] md:h-[40px]" />
-            </Link>
-          )}
-          {!isFooterOpened && (
-            <BurgerMenu isOpen={isOpen} showMenu={showMenu} />
-          )}
-
-          <div className="hidden lg:flex">{/* <SelectLang /> */}</div>
+          <Link href={"/"} onClick={goHome}>
+            <Icon
+              name="Logo"
+              className={`md:w-[121px] md:h-[40px] ${isFooterOpened ? "text-[#F0F0F0]" : ""}`}
+            />
+          </Link>
+          <BurgerMenu isOpen={isOpen} showMenu={showMenu} />
         </div>
         <MobileMenu isOpen={isOpen} showMenu={showMenu} />
       </Container>

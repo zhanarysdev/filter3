@@ -3,7 +3,7 @@ import { Icon } from "./icons";
 
 function Button({ children }: { children: ReactNode }) {
   return (
-    <div className="cursor-pointer hover:text-background border hover:bg-primary flex items-center gap-[4px] border-primary rounded-[4px] pl-[6px] pr-[8px] py-[6px] text-[14px] leading-[18px] md:leading-[20px] font-medium lg:text-[16px] lg:leading-[20px] xl:text-[18px] xl:leading-[24px] hover:[&>svg]:color-background">
+    <div className="cursor-pointer hover:text-background border hover:bg-primary flex items-center gap-[4px] border-primary rounded-[8px] pl-[6px] pr-[8px] py-[6px] text-[14px] leading-[18px] md:leading-[20px] font-medium lg:text-[16px] lg:leading-[20px] xl:text-[18px] xl:leading-[24px] hover:[&>svg]:color-background">
       {children}
     </div>
   );
@@ -16,16 +16,18 @@ export function Buttons({ variant }: { variant: string }) {
         <Button>
           <Icon
             name="AppStore"
-            className="w-[16px] h-[16px] md:w-[18px] md:h-[18px] xl:w-[20px] xl:h-[20px]"
+            className="w-[18px] h-[18px] xl:w-[20px] xl:h-[20px]"
           />
-          <span className="lg:font-bold">Download iOS App</span>
+          <span className="font-semibold lg:font-bold">Download iOS App</span>
         </Button>
         <Button>
           <Icon
             name="PlayMarket"
-            className="w-[16px] h-[16px] md:w-[18px] md:h-[18px] xl:w-[20px] xl:h-[20px]"
+            className="w-[18px] h-[18px] xl:w-[20px] xl:h-[20px]"
           />
-          <span className="lg:font-bold">Download Android App</span>
+          <span className="font-semibold lg:font-bold">
+            Download Android App
+          </span>
         </Button>
       </div>
     );
@@ -36,16 +38,16 @@ export function Buttons({ variant }: { variant: string }) {
       <Button>
         <Icon
           name="AppStore"
-          className="w-[16px] h-[16px] md:w-[18px] md:h-[18px] xl:w-[20px] xl:h-[20px]"
+          className="w-[18px] h-[18px] xl:w-[20px] xl:h-[20px]"
         />
-        <span>App Store</span>
+        <span className="font-semibold">App Store</span>
       </Button>
       <Button>
         <Icon
           name="PlayMarket"
-          className="w-[16px] h-[16px] md:w-[18px] md:h-[18px] xl:w-[20px] xl:h-[20px]"
+          className="w-[18px] h-[18px] xl:w-[20px] xl:h-[20px]"
         />
-        <span>Google Play</span>
+        <span className="font-semibold">Google Play</span>
       </Button>
     </div>
   );

@@ -13,7 +13,7 @@ function debounce(func: (...args: any[]) => void, wait: number) {
   };
 }
 
-export const wheel = debounce((e: WheelEvent<HTMLElement>, length: number) => {
+export const wheel = (e: WheelEvent<HTMLElement>, length: number) => {
   const index = store.getState().index;
   const showFooter = store.getState().showFooter;
   const increment = store.getState().increment;
@@ -34,7 +34,7 @@ export const wheel = debounce((e: WheelEvent<HTMLElement>, length: number) => {
     decrement();
     setDirection("up");
   }
-}, 200);
+};
 
 export function xswiper(
   e: any,
