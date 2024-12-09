@@ -6,17 +6,17 @@ import { Title } from "@/components/title";
 export default function Terms() {
   return (
     <section className="lg:flex lg:h-full overflow-y-scroll">
-      <Container className="lg:flex-1 border-r border-[#DFDFDF] lg:pt-[162px] xl:pt-[280px]">
+      <Container className="lg:flex-1  lg:flex lg:flex-col justify-center">
         <BackButton />
         <div className="max-w-[619px]">
           <Title data="Terms & Conditions" />
-          <div className="mt-[8px] md:mt-[20px]">
+          <div className="mt-[8px] md:mt-[20px] lg:mt-[15px]">
             <Text data="This may mean our list of supported countries and regions could differ from PayPal’s official list. While we strive to keep this list current, the supported locations may occasionally be updated by PayPal/Hyperwallet. For the most up-to-date information, please refer to PayPal support." />
           </div>
         </div>
       </Container>
       <Container className="lg:flex-1">
-        <div className="mt-[20px] [&>p]:mt-[5px] lg:[&>p]:mt-[10px]">
+        <div className="mt-[20px] md:mt-[40px] lg:mt-[30px] [&>p]:mt-[5px] lg:[&>p]:mt-[10px]">
           <Text weight="bold" data="1. Agreement to Terms." />
           <Text data="By using our Services, you agree to be bound by these Terms. If you don’t agree to be bound by these Terms, do not use the Services." />
           <div className="my-[16px]">

@@ -52,7 +52,7 @@ export function Footer() {
       onTouchStart={startTouch}
       onTouchMove={moveTouch}
       onWheel={wheel}
-      className="z-[20] bg-primary flex flex-col justify-between  transition-all fixed top-0 left-0 right-0 bottom-0 md:p-[20px]"
+      className="z-[20] bg-primary flex flex-col justify-between  transition-all fixed top-0 left-0 right-0 bottom-0 md:p-[20px] lg:p-[30px]"
       style={{
         transform: isFooterOpened ? "translate(0)" : "translateY(100vh)",
         display: pathname !== "/" ? "none" : "",
@@ -60,9 +60,9 @@ export function Footer() {
     >
       <Icon
         name="Filter"
-        className="w-full text-[#545454] h-auto mt-auto mb-[60px] md:mb-[80px]  lg:mb-auto"
+        className="w-full text-[#545454] h-auto mt-auto mb-[60px] md:mb-[80px] lg:mb-auto lg:mt-0"
       />
-      <div className="text-[#929292] text-[14px] leading-[18px] md:text-[16px] md:leading-[22px] flex justify-between items-end xl:text-[18px] xl:leading-[24px]  p-[16px]">
+      <div className="text-[#929292] text-[14px] leading-[18px] md:text-[16px] md:leading-[22px] flex justify-between items-end lg:text-[18px] lg:leading-[24px] p-[10px] md:p-0">
         <div className="flex flex-col gap-[10px] md:gap-[5px]">
           <Link
             style={{ color: pathname === "/form" ? "#F0F0F0" : "" }}

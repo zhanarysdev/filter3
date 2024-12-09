@@ -38,7 +38,7 @@ export default function Form() {
         <BackButton />
         <div className="max-w-[619px]">
           <Title data={"Fill the form"} />
-          <div className="mt-[8px]">
+          <div className="mt-[5px] mb-[30px] md:mt-[10px] md:mb-[40px]">
             <Text data="This may mean our list of supported countries and regions could differ from PayPal’s official list. While we strive to keep this list current, the supported locations may occasionally be updated by PayPal/Hyperwallet. For the most up-to-date information, please refer to PayPal support." />
           </div>
         </div>

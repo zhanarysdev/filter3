@@ -6,9 +6,9 @@ import { Explore } from "./explore";
 export function Overlay() {
   const pathname = usePathname();
   return (
-    <div className="hidden bg-transparent lg:flex flex-col justify-end  fixed  left-0 right-[50%] bottom-0 p-[16px] md:p-[20px]">
-      <div className="text-[#929292] text-[14px] leading-[18px] md:leading-[20px] flex justify-between items-end xl:text-[18px] xl:leading-[24px]">
-        <div className="flex flex-col gap-[2px] xl:gap-[5px]">
+    <div className="hidden bg-transparent lg:flex flex-col justify-end  fixed  left-0 right-[50%] bottom-0 p-[16px] md:p-[20px] lg:p-[30px]">
+      <div className="text-[#929292] text-[18px] leading-[24px] flex justify-between items-end">
+        <div className="flex flex-col gap-[5px]">
           <Link
             className={`hover:text-primary lg:hidden`}
             style={{ color: pathname === "/form" ? "#373737" : "" }}

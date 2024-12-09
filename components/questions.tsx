@@ -33,15 +33,15 @@ export function Questions({
     <div
       onTouchStart={startTouch}
       onTouchMove={(e) => xswiper(e, inix, iniy, setinix, setiniy, goBack)}
-      className="fixed top-[28px] md:top-[84px] lg:top-0 left-0 lg:left-auto right-0 lg:right-auto bottom-0 lg:h-full lg:py-[20px] p-[10px] md:p-[20px] bg-white transition-all"
+      className="fixed top-[28px] md:top-[34px] lg:top-0 left-0 flex lg:left-auto right-0 lg:right-auto bottom-0 lg:h-full lg:p-[30px] p-[10px] md:p-[20px] bg-white transition-all"
       style={{
         transform: selected !== null ? "translateX(0)" : "translateX(100vw)",
       }}
     >
       {selected !== null && (
         <AnimatePresence>
-          <BackButton onClick={goBack} />
           <div className="flex flex-col  md:justify-start h-full overflow-y-auto">
+            <BackButton onClick={goBack} />
             <h3 className="text-[30px] leading-[34px] font-bold lg:text-[27px] lg:leading-[32px]">
               {data.find((el) => el.id === selected)?.title}{" "}
             </h3>

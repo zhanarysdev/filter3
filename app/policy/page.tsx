@@ -7,11 +7,11 @@ import { Title as GTitle } from "@/components/title";
 export default function Policy() {
   return (
     <section className="lg:flex lg:h-full overflow-y-scroll">
-      <Container className="lg:flex-1 border-r border-[#DFDFDF] lg:pt-[162px] xl:pt-[280px]">
+      <Container className="lg:flex-1 justify-center lg:flex lg:flex-col">
         <BackButton />
         <div className="max-w-[619px]">
           <GTitle data={"Privacy Policy"} />
-          <div className="mt-[8px] md:mt-[20px]">
+          <div className="mt-[8px] md:mt-[20px] lg:mt-[15px]">
             <GText data="In order to receive information about your Personal Data, the purposes and the parties the Data is shared with, contact the Owner. For more information and to understand your rights, you can also view the complete version of this privacy policy, by clicking the link at the bottom right of this page." />
           </div>
         </div>

@@ -22,7 +22,7 @@ export function Header() {
           <Link href={"/"} onClick={goHome}>
             <Icon
               name="Logo"
-              className={`md:w-[113px] md:h-[30px] ${isFooterOpened || isOpen ? "text-[#F0F0F0]" : ""}`}
+              className={`md:w-[113px] md:h-[30px] ${isFooterOpened || isOpen ? "text-[#F0F0F0] lg:text-[#373737]" : ""} lg:text-[#373737]`}
             />
           </Link>
           <BurgerMenu isOpen={isOpen} showMenu={showMenu} />
