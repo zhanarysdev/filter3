@@ -3,7 +3,7 @@ import { Icon } from "./icons";
 
 function Button({ children }: { children: ReactNode }) {
   return (
-    <div className="cursor-pointer hover:text-background border hover:bg-primary flex items-center gap-[4px] border-primary rounded-[8px] pl-[6px] pr-[8px] py-[6px] text-[14px] leading-[18px] md:leading-[20px] font-medium lg:text-[16px] lg:leading-[20px] xl:text-[18px] xl:leading-[24px] hover:[&>svg]:color-background">
+    <div className="cursor-pointer hover:text-background border hover:bg-primary flex items-center gap-[4px] border-primary rounded-[8px] pl-[6px] pr-[8px] py-[6px] text-[14px] leading-[18px] md:text-[16px] md:leading-[22px] font-semibold lg:text-[16px] lg:leading-[20px] xl:text-[18px] xl:leading-[24px] hover:[&>svg]:color-background">
       {children}
     </div>
   );
@@ -12,22 +12,27 @@ function Button({ children }: { children: ReactNode }) {
 export function Buttons({ variant }: { variant: string }) {
   if (variant === "second") {
     return (
-      <div className="flex flex-col gap-[10px] justify-center items-start">
+      <div className="flex lg:flex-col gap-[10px] ">
         <Button>
           <Icon
             name="AppStore"
-            className="w-[18px] h-[18px] xl:w-[20px] xl:h-[20px]"
+            className="w-[18px] h-[18px] md:w-[20px] md:h-[20px]"
           />
-          <span className="font-semibold lg:font-bold">Download iOS App</span>
+          <span className="hidden lg:flex font-semibold lg:font-bold">
+            Download iOS App
+          </span>
+          <span className="font-semibold lg:font-bold">App Store</span>
         </Button>
         <Button>
           <Icon
             name="PlayMarket"
-            className="w-[18px] h-[18px] xl:w-[20px] xl:h-[20px]"
+            className="w-[18px] h-[18px] md:w-[20px] md:h-[20px]"
           />
-          <span className="font-semibold lg:font-bold">
+          <span className="hidden lg:flex font-semibold lg:font-bold">
             Download Android App
           </span>
+
+          <span className="font-semibold lg:font-bold">Google Play</span>
         </Button>
       </div>
     );
@@ -38,14 +43,14 @@ export function Buttons({ variant }: { variant: string }) {
       <Button>
         <Icon
           name="AppStore"
-          className="w-[18px] h-[18px] xl:w-[20px] xl:h-[20px]"
+          className="w-[18px] h-[18px] md:w-[20px] md:h-[20px]"
         />
         <span className="font-semibold">App Store</span>
       </Button>
       <Button>
         <Icon
           name="PlayMarket"
-          className="w-[18px] h-[18px] xl:w-[20px] xl:h-[20px]"
+          className="w-[18px] h-[18px] md:w-[20px] md:h-[20px]"
         />
         <span className="font-semibold">Google Play</span>
       </Button>

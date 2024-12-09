@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/back-button";
 import { Container } from "@/components/container";
 import { Text } from "@/components/text";
 import { Title } from "@/components/title";
@@ -5,7 +6,8 @@ import { Title } from "@/components/title";
 export default function Terms() {
   return (
     <section className="lg:flex lg:h-full overflow-y-scroll">
-      <Container className="lg:flex-1 border-r border-[#DFDFDF] pt-[32px] lg:pt-[162px] xl:pt-[280px]">
+      <Container className="lg:flex-1 border-r border-[#DFDFDF] lg:pt-[162px] xl:pt-[280px]">
+        <BackButton />
         <div className="max-w-[619px]">
           <Title data="Terms & Conditions" />
           <div className="mt-[8px] md:mt-[20px]">

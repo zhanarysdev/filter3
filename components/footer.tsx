@@ -52,7 +52,7 @@ export function Footer() {
       onTouchStart={startTouch}
       onTouchMove={moveTouch}
       onWheel={wheel}
-      className="z-[20] bg-primary flex flex-col justify-between  transition-all fixed top-0 left-0 right-0 bottom-0 p-[16px] md:p-[20px]"
+      className="z-[20] bg-primary flex flex-col justify-between  transition-all fixed top-0 left-0 right-0 bottom-0 md:p-[20px]"
       style={{
         transform: isFooterOpened ? "translate(0)" : "translateY(100vh)",
         display: pathname !== "/" ? "none" : "",
@@ -60,10 +60,10 @@ export function Footer() {
     >
       <Icon
         name="Filter"
-        className="w-full text-[#545454] h-auto mt-auto mb-[60px] md:mb-[40px] lg:mb-auto"
+        className="w-full text-[#545454] h-auto mt-auto mb-[60px] md:mb-[80px]  lg:mb-auto"
       />
-      <div className="text-[#929292] text-[14px] leading-[18px] md:leading-[20px] flex justify-between items-end xl:text-[18px] xl:leading-[24px]">
-        <div className="flex flex-col gap-[2px] xl:gap-[5px]">
+      <div className="text-[#929292] text-[14px] leading-[18px] md:text-[16px] md:leading-[22px] flex justify-between items-end xl:text-[18px] xl:leading-[24px]  p-[16px]">
+        <div className="flex flex-col gap-[10px] md:gap-[5px]">
           <Link
             style={{ color: pathname === "/form" ? "#F0F0F0" : "" }}
             onClick={() => showFooter(false)}
@@ -98,8 +98,12 @@ export function Footer() {
           </Link>
         </div>
         <div>
-          <Link className=" hover:text-white" href={"#"}>
-            Instagram
+          <Link
+            className="flex justify-center items-center gap-[5px] hover:text-white"
+            href={"#"}
+          >
+            <Icon name={"GoLink"} className="mt-[4px]" />
+            <span>Instagram</span>
           </Link>
         </div>
       </div>
