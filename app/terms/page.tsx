@@ -1,7 +1,22 @@
 import { BackButton } from "@/components/back-button";
 import { Container } from "@/components/container";
-import { Text } from "@/components/text";
-import { Title } from "@/components/title";
+import { Title as STitle } from "@/components/title";
+import { Text as SText } from "@/components/text";
+
+const Text = ({ data, weight }: { data: string; weight?: "bold" }) => (
+  <p
+    className={`text-[18px] leading-[22px] font-medium ${weight ? "font-semibold" : ""}`}
+  >
+    {data}
+  </p>
+);
+const Title = ({ data, weight }: { data: string; weight?: "bold" }) => (
+  <p
+    className={`text-[18px] leading-[22px] font-bold ${weight ? "font-semibold" : ""}`}
+  >
+    {data}
+  </p>
+);
 
 export default function Terms() {
   return (
@@ -9,9 +24,9 @@ export default function Terms() {
       <Container className="lg:flex-1  lg:flex lg:flex-col justify-center">
         <BackButton />
         <div className="max-w-[619px]">
-          <Title data="Terms & Conditions" />
+          <STitle data="Terms & Conditions" />
           <div className="mt-[8px] md:mt-[20px] lg:mt-[15px]">
-            <Text data="This may mean our list of supported countries and regions could differ from PayPal’s official list. While we strive to keep this list current, the supported locations may occasionally be updated by PayPal/Hyperwallet. For the most up-to-date information, please refer to PayPal support." />
+            <SText data="This may mean our list of supported countries and regions could differ from PayPal’s official list. While we strive to keep this list current, the supported locations may occasionally be updated by PayPal/Hyperwallet. For the most up-to-date information, please refer to PayPal support." />
           </div>
         </div>
       </Container>

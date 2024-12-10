@@ -12,7 +12,7 @@ function Button({ children }: { children: ReactNode }) {
 export function Buttons({ variant }: { variant: string }) {
   if (variant === "second") {
     return (
-      <div className="flex lg:flex-col gap-[10px] ">
+      <div className="flex lg:flex-col gap-[10px] items-start ">
         <Button>
           <Icon
             name="AppStore"
@@ -21,7 +21,7 @@ export function Buttons({ variant }: { variant: string }) {
           <span className="hidden lg:flex font-semibold lg:font-bold">
             Download iOS App
           </span>
-          <span className="font-semibold lg:font-bold">App Store</span>
+          <span className="font-semibold lg:hidden">App Store</span>
         </Button>
         <Button>
           <Icon
@@ -32,14 +32,14 @@ export function Buttons({ variant }: { variant: string }) {
             Download Android App
           </span>
 
-          <span className="font-semibold lg:font-bold">Google Play</span>
+          <span className="font-semibold lg:hidden">Google Play</span>
         </Button>
       </div>
     );
   }
 
   return (
-    <div className="flex gap-[10px] items-center">
+    <div className="flex gap-[10px] items-start">
       <Button>
         <Icon
           name="AppStore"

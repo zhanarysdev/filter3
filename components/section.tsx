@@ -11,6 +11,7 @@ import { Buttons } from "./buttons";
 import { Container } from "./container";
 import { Text } from "./text";
 import { Title } from "./title";
+import { Spinner } from "./spinner";
 
 export function Section() {
   const { t } = useTranslation();
@@ -76,7 +77,7 @@ export function Section() {
     >
       <div className="lg:items-center lg:p-0 lg:flex lg:flex-1 lg:bg-white">
         <AnimatePresence mode="wait">
-          <Container className="flex flex-col">
+          <Container className="flex flex-col max-w-[648px]">
             {titles.map((el, index) => (
               <Animate key={`${el} - ${index}`} id={`${el} - ${index}`}>
                 <Title data={el} />
@@ -108,27 +109,51 @@ export function Section() {
         className="m-[10px] md:m-[20px] md:mt-[30px] lg:flex-1 relative flex-auto mt-[30px] lg:m-0"
       >
         {data[index].img ? (
-          <Image
-            src={data[index].img}
-            alt={""}
-            fill
-            sizes="100% 100%"
-            objectFit="cover"
-          />
+          <Img src={data[index].img} />
         ) : (
-          <div className="absolute top-0 right-0 left-0 bottom-0 lg:p-[20px]">
-            <video
-              playsInline
-              muted
-              className="w-full h-full object-cover"
-              loop
-              autoPlay={true}
-            >
-              <source src={data[index].video} />
-            </video>
+          <div className="absolute top-0 right-0 left-0 bottom-0 lg:px-[30px]">
+            <Video src={data[index].video} />
           </div>
         )}
       </motion.div>
     </section>
   );
 }
+
+const Video = ({ src }: { src: string }) => {
+  const [isLoading, setLoading] = useState(true);
+  return (
+    <>
+      {isLoading ? <Spinner /> : null}
+      <video
+        playsInline
+        muted
+        className="w-full h-full object-cover"
+        loop
+        preload="auto"
+        autoPlay={true}
+        onLoadedData={() => setLoading(false)}
+      >
+        <source src={src} />
+      </video>
+    </>
+  );
+};
+
+const Img = ({ src }: { src: string }) => {
+  const [isLoading, setLoading] = useState(true);
+  return (
+    <>
+      {isLoading ? <Spinner /> : null}
+      <Image
+        src={src}
+        alt={""}
+        loading="lazy"
+        fill
+        sizes="100% 100%"
+        objectFit="cover"
+        onLoad={() => setLoading(false)}
+      />
+    </>
+  );
+};

@@ -99,7 +99,7 @@ export function Footer() {
         </div>
         <div>
           <Link
-            className="flex justify-center items-center gap-[5px] hover:text-white"
+            className="flex justify-center items-center gap-[5px] hover:text-white [&>svg]:hover:text-white"
             href={"#"}
           >
             <Icon name={"GoLink"} className="mt-[4px]" />
