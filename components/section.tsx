@@ -74,6 +74,7 @@ export function Section() {
     <section
       className="h-full  flex flex-col lg:flex-row mt-[30px] md:mt-[40px] lg:mt-0"
       onWheel={(e) => {
+        console.log(e.deltaY);
         if (e.deltaY < 60 && e.deltaY > -60) {
           a.push(e.deltaY);
           if (e.deltaY === -0) {
