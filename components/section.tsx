@@ -68,7 +68,7 @@ export function Section() {
   const text = t(data[index].text);
   const texts = text.split("<br/>");
 
-  let a = [];
+  const a: number[] = [];
 
   return (
     <section
