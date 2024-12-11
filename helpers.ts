@@ -13,24 +13,24 @@ function debounce(func: (...args: any[]) => void, wait: number) {
   };
 }
 
-export const wheel = (e: WheelEvent<HTMLElement>, length: number) => {
+export const wheel = (e:number, length: number) => {
   const index = store.getState().index;
   const showFooter = store.getState().showFooter;
   const increment = store.getState().increment;
   const decrement = store.getState().decrement;
   const hideExplore = store.getState().hideExplore;
   const setDirection = store.getState().setDirection;
-  if (e.deltaY > 0 && index < length) {
+  if (e > 0 && index < length) {
     increment();
     hideExplore();
     setDirection("down");
   }
 
-  if (e.deltaY > 0 && index === length) {
+  if (e > 0 && index === length) {
     showFooter(true);
   }
 
-  if (e.deltaY < 0 && index !== 0) {
+  if (e < 0 && index !== 0) {
     decrement();
     setDirection("up");
   }

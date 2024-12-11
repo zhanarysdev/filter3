@@ -68,10 +68,21 @@ export function Section() {
   const text = t(data[index].text);
   const texts = text.split("<br/>");
 
+  let a = [];
+
   return (
     <section
       className="h-full  flex flex-col lg:flex-row mt-[30px] md:mt-[40px] lg:mt-0"
-      onWheel={(e) => wheel(e, data.length - 1)}
+      onWheel={(e) => {
+        if (e.deltaY < 60 && e.deltaY > -60) {
+          a.push(e.deltaY);
+          if (e.deltaY === -0) {
+            wheel(a[a.length - 2], data.length - 1);
+          }
+        } else {
+          wheel(e.deltaY, data.length - 1);
+        }
+      }}
       onTouchStart={startTouch}
       onTouchMove={moveTouch}
     >
