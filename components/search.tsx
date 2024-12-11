@@ -5,13 +5,17 @@ export function Search({
   value,
   onChange,
   onFocus,
+  className,
 }: {
   value: string;
   onChange: (v: string) => void;
-  onFocus: () => void;
+  onFocus?: () => void;
+  className?: string;
 }) {
   return (
-    <div className="max-w-[622px] border w-full border-[#929292] rounded-[16px] flex items-center pl-[12px]">
+    <div
+      className={`max-w-[622px] border w-full border-[#929292] rounded-[16px] flex items-center pl-[12px] ${className}`}
+    >
       <Icon name="Search" />
       <input
         value={value}

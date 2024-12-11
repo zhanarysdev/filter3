@@ -56,6 +56,11 @@ export default function Faq() {
                 : "relative"
             }
           >
+            <Search
+              value={value}
+              onChange={searchHandler}
+              className="hidden lg:flex"
+            />
             <motion.div layout className="flex items-center gap-[10px]">
               <motion.div
                 layout
@@ -71,6 +76,7 @@ export default function Faq() {
                 onFocus={() => setFocused(true)}
                 value={value}
                 onChange={searchHandler}
+                className="lg:hidden"
               />
             </motion.div>
             <motion.div layout className={!focused ? "hidden" : "mt-[30px] "}>
@@ -105,7 +111,13 @@ export default function Faq() {
           </div>
         </Container>
         <Container className="lg:flex-1">
-          <Questions selected={selected} setSelected={setSelected} />
+          <Questions
+            result={result}
+            setResult={setReslut}
+            onChange={onChange}
+            selected={selected}
+            setSelected={setSelected}
+          />
         </Container>
       </section>
     </AnimatePresence>

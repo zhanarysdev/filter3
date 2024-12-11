@@ -11,9 +11,28 @@ import { BackButton } from "./back-button";
 export function Questions({
   selected,
   setSelected,
+  result,
+  onChange,
+  setResult,
 }: {
   selected: null | number;
   setSelected: Dispatch<SetStateAction<null | number>>;
+  setResult: Dispatch<
+    SetStateAction<
+      | {
+          title: string;
+          id: number;
+        }[]
+      | null
+    >
+  >;
+  onChange: Dispatch<SetStateAction<string>>;
+  result?:
+    | {
+        title: string;
+        id: number;
+      }[]
+    | null;
 }) {
   const [curent, setCurent] = useState<number>(0);
 
@@ -35,10 +54,28 @@ export function Questions({
       onTouchMove={(e) => xswiper(e, inix, iniy, setinix, setiniy, goBack)}
       className="fixed top-[28px] md:top-[34px] lg:top-0 left-0 flex lg:left-auto right-0 lg:right-auto bottom-0 lg:h-full lg:p-[30px] p-[10px] md:p-[20px] bg-white transition-all"
       style={{
-        transform: selected !== null ? "translateX(0)" : "translateX(100vw)",
+        transform:
+          selected !== null || result ? "translateX(0)" : "translateX(100vw)",
       }}
     >
-      {selected !== null && (
+      {result && (
+        <div className="flex flex-col ">
+          {result.map((el, index) => (
+            <div
+              onClick={() => {
+                onChange("");
+                setResult(null);
+                setSelected(el.id);
+              }}
+              className="cursor-pointer"
+              key={index}
+            >
+              {el.title}
+            </div>
+          ))}
+        </div>
+      )}
+      {!result && selected !== null && (
         <AnimatePresence>
           <div className="flex flex-col  md:justify-start h-full overflow-y-auto">
             <BackButton onClick={goBack} />
