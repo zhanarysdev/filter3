@@ -74,8 +74,8 @@ export function Section() {
     <section
       className="h-full  flex flex-col lg:flex-row mt-[30px] md:mt-[40px] lg:mt-0"
       onWheel={(e) => {
-        console.log(e.deltaY);
-        if (e.deltaY < 60 && e.deltaY > -60) {
+        console.log(e.deltaX);
+        if (1 / e.deltaX === -Infinity) {
           a.push(e.deltaY);
           if (e.deltaY === -0) {
             wheel(a[a.length - 2], data.length - 1);
