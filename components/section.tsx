@@ -120,13 +120,11 @@ export function Section() {
         animate={{ opacity: 1 }}
         className="m-[10px] md:m-[20px] md:mt-[30px] lg:flex-1 relative flex-auto mt-[30px] lg:m-0"
       >
-        {data[index].img ? (
-          <Img src={data[index].img} />
-        ) : (
-          <div className="absolute top-0 right-0 left-0 bottom-0 lg:px-[30px]">
-            <Video src={data[index].video} />
-          </div>
-        )}
+        <div
+          className={`absolute top-0 right-0 left-0 bottom-0 ${index === 1 ? "lg:px-[30px]" : ""}`}
+        >
+          <Video src={data[index].video} />
+        </div>
       </motion.div>
     </section>
   );
@@ -144,28 +142,12 @@ const Video = ({ src }: { src: string }) => {
         loop
         preload="auto"
         autoPlay={true}
-        onLoadedData={() => setLoading(false)}
+        onLoadedData={() => {
+          setLoading(false);
+        }}
       >
         <source src={src} />
       </video>
-    </>
-  );
-};
-
-const Img = ({ src }: { src: string }) => {
-  const [isLoading, setLoading] = useState(true);
-  return (
-    <>
-      {isLoading ? <Spinner /> : null}
-      <Image
-        src={src}
-        alt={""}
-        loading="lazy"
-        fill
-        sizes="100% 100%"
-        objectFit="cover"
-        onLoad={() => setLoading(false)}
-      />
     </>
   );
 };
