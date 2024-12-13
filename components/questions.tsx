@@ -1,38 +1,24 @@
 "use client";
-import { xswiper } from "@/helpers";
-import { Dispatch, SetStateAction, useState } from "react";
 import { data } from "@/faq-data";
-import { Title } from "./title";
-import { Icon } from "./icons";
+import { xswiper } from "@/helpers";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
+import { Dispatch, SetStateAction, useState } from "react";
+import FuzzyHighlighter, { Highlighter } from "react-fuzzy-highlighter";
 import { BackButton } from "./back-button";
+import { Icon } from "./icons";
+import { Question } from "./question";
+
+const FZ: any = FuzzyHighlighter;
 
 export function Questions({
   selected,
   setSelected,
-  result,
-  onChange,
-  setResult,
+  query,
 }: {
+  query: string;
   selected: null | number;
   setSelected: Dispatch<SetStateAction<null | number>>;
-  setResult: Dispatch<
-    SetStateAction<
-      | {
-          title: string;
-          id: number;
-        }[]
-      | null
-    >
-  >;
-  onChange: Dispatch<SetStateAction<string>>;
-  result?:
-    | {
-        title: string;
-        id: number;
-      }[]
-    | null;
 }) {
   const [curent, setCurent] = useState<number>(0);
 
@@ -55,27 +41,64 @@ export function Questions({
       className="fixed top-[28px] md:top-[34px] lg:top-0 left-0 flex lg:left-auto right-0 lg:right-auto bottom-0 lg:h-full lg:p-[30px] p-[10px] md:p-[20px] bg-white transition-all"
       style={{
         transform:
-          selected !== null || result ? "translateX(0)" : "translateX(100vw)",
+          selected !== null || query ? "translateX(0)" : "translateX(100vw)",
       }}
     >
-      {result && (
-        <div className="flex flex-col ">
-          {result.map((el, index) => (
-            <div
-              onClick={() => {
-                onChange("");
-                setResult(null);
-                setSelected(el.id);
-              }}
-              className="cursor-pointer"
-              key={index}
-            >
-              {el.title}
-            </div>
-          ))}
-        </div>
-      )}
-      {!result && selected !== null && (
+      <AnimatePresence>
+        <FZ
+          query={query}
+          data={data}
+          options={{
+            shouldSort: true,
+            includeMatches: true,
+            threshold: 0.3,
+            location: 0,
+            distance: 100,
+            minMatchCharLength: 1,
+            keys: [
+              "questions.items.title",
+              "questions.items.text",
+              "title",
+              "questions.title",
+            ],
+          }}
+        >
+          {({ formattedResults }) => {
+            return (
+              <ul className="flex flex-col gap-8 mt-[30px] md:mt-[40px] lg:mt-0">
+                {formattedResults.map((formattedResult, resultIndex) => {
+                  if (formattedResult.formatted.title === undefined) {
+                    return null;
+                  }
+
+                  return (
+                    <div key={resultIndex}>
+                      <h3 className="text-[30px] text-[#8a8a8a] leading-[34px] font-bold lg:text-[27px] lg:leading-[32px]">
+                        <Highlighter text={formattedResult.formatted.title} />
+                      </h3>
+                      <div>
+                        <div className="mt-[16px] flex flex-col border-b border-[#929292] ">
+                          {formattedResult.item.questions.map((el, index) => (
+                            <Question
+                              m={formattedResult.matches}
+                              f={formattedResult}
+                              key={index}
+                              index={index}
+                              el={el}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </ul>
+            );
+          }}
+        </FZ>
+      </AnimatePresence>
+
+      {selected !== null && (
         <AnimatePresence>
           <div className="flex flex-col  md:justify-start h-full overflow-y-auto">
             <BackButton onClick={goBack} />

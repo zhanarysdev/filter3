@@ -11,30 +11,18 @@ import { AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Icon } from "@/components/icons";
+import FuzzyHighlighter, { Highlighter } from "react-fuzzy-highlighter";
+import { Question } from "@/components/question";
+
+const FZ: any = FuzzyHighlighter;
 
 export default function Faq() {
   const [selected, setSelected] = useState<null | number>(null);
   const [value, onChange] = useState("");
-  const [result, setReslut] = useState<
-    | null
-    | {
-        title: string;
-        id: number;
-      }[]
-  >(null);
   const [focused, setFocused] = useState(false);
 
   const searchHandler = (v: string) => {
     onChange(v);
-    if (!v) {
-      setReslut(null);
-    } else {
-      setReslut(
-        categories.filter((el) =>
-          el.title.toLocaleLowerCase().includes(v.toLocaleLowerCase())
-        )
-      );
-    }
   };
 
   return (
@@ -65,7 +53,10 @@ export default function Faq() {
               <motion.div
                 layout
                 className={!focused ? "hidden" : ""}
-                onClick={() => setFocused(false)}
+                onClick={() => {
+                  onChange("");
+                  setFocused(false);
+                }}
               >
                 <Icon
                   name="CaretDown"
@@ -80,20 +71,61 @@ export default function Faq() {
               />
             </motion.div>
             <motion.div layout className={!focused ? "hidden" : "mt-[30px] "}>
-              {result?.map((el, index) => (
-                <div
-                  onClick={() => {
-                    onChange("");
-                    setReslut(null);
-                    setSelected(el.id);
-                    setFocused(false);
-                  }}
-                  className="cursor-pointer"
-                  key={index}
-                >
-                  {el.title}
-                </div>
-              ))}
+              <FZ
+                query={value}
+                data={data}
+                options={{
+                  shouldSort: true,
+                  includeMatches: true,
+                  threshold: 0.3,
+                  location: 0,
+                  distance: 100,
+                  minMatchCharLength: 1,
+                  keys: [
+                    "questions.items.title",
+                    "questions.items.text",
+                    "title",
+                    "questions.title",
+                  ],
+                }}
+              >
+                {({ formattedResults }) => {
+                  return (
+                    <ul className="flex flex-col gap-8 mt-[30px] md:mt-[40px] lg:mt-0">
+                      {formattedResults.map((formattedResult, resultIndex) => {
+                        if (formattedResult.formatted.title === undefined) {
+                          return null;
+                        }
+
+                        return (
+                          <div key={resultIndex}>
+                            <h3 className="text-[16px] text-[#8a8a8a] leading-[20px] font-bold lg:text-[27px] lg:leading-[32px]">
+                              <Highlighter
+                                text={formattedResult.formatted.title}
+                              />
+                            </h3>
+                            <div>
+                              <div className="mt-[16px] flex flex-col border-b border-[#929292] ">
+                                {formattedResult.item.questions.map(
+                                  (el, index) => (
+                                    <Question
+                                      m={formattedResult.matches}
+                                      f={formattedResult}
+                                      key={index}
+                                      index={index}
+                                      el={el}
+                                    />
+                                  )
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </ul>
+                  );
+                }}
+              </FZ>
             </motion.div>
           </motion.div>
           <div className="grid grid-cols-3 md:grid-cols-4 gap-[10px] md:gap-[20px] lg:gap-[10px] mt-[20px] md:mt-[40px] lg:mt-[30px] lg:max-w-[619px]">
@@ -112,9 +144,7 @@ export default function Faq() {
         </Container>
         <Container className="lg:flex-1">
           <Questions
-            result={result}
-            setResult={setReslut}
-            onChange={onChange}
+            query={value}
             selected={selected}
             setSelected={setSelected}
           />

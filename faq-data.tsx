@@ -267,7 +267,7 @@ export const data = [
         ],
       },
       {
-        title: "Payout issues",
+        title: "test",
         items: [
           {
             title: "PayPal supported countries",
@@ -319,7 +319,7 @@ export const data = [
             text: "Patreon uses PayPal as an option to process payouts. In some cases, your payout may be processed through a service called HyperWallet, which is a global platform provided by PayPal, to handle payouts for users around the world.",
           },
           {
-            title: "PayPal supported countries",
+            title: "test",
             text: "Patreon uses PayPal as an option to process payouts. In some cases, your payout may be processed through a service called HyperWallet, which is a global platform provided by PayPal, to handle payouts for users around the world.",
           },
         ],
@@ -327,14 +327,14 @@ export const data = [
     ],
   },
   {
-    title: "Paying out of earnings",
+    title: "test",
     id: 8,
     questions: [
       {
-        title: "Setting up payouts",
+        title: "test",
         items: [
           {
-            title: "PayPal supported countries",
+            title: "test",
             text: "Patreon uses PayPal as an option to process payouts. In some cases, your payout may be processed through a service called HyperWallet, which is a global platform provided by PayPal, to handle payouts for users around the world.",
           },
           {

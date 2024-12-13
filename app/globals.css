@@ -18,9 +18,44 @@ body {
   height: var(--app-height);
   overflow: hidden;
 }
+mark {
+  opacity: 1;
+  background: transparent;
+  color: #373737;
+}
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+.text h1 {
+ font-size: 22px; 
+ line-height: 26px;
+ font-weight: 700;
+ @screen md {
+ font-size: 14px; 
+ line-height: 18px;
+ font-weight: 700;
+ }
+
+ @screen lg {
+ font-size: 18px; 
+ line-height: 22px;
+ font-weight: 700;
+ }
+}
+
+.text p {
+ font-size: 14px; 
+ line-height: 18px;
+ font-weight: 500;
+
+ @screen lg {
+ font-size: 18px; 
+ line-height: 22px;
+ font-weight: 500;
+ }
+}
 }

@@ -74,8 +74,10 @@ export function Section() {
     <section
       className="h-full  flex flex-col lg:flex-row mt-[30px] md:mt-[40px] lg:mt-0"
       onWheel={(e) => {
-        console.log(e);
-        if (1 / e.deltaX === -Infinity) {
+        if (
+          Math.abs(e.deltaY) !== Math.abs(100) &&
+          Math.abs(e.deltaY) !== Math.abs(102)
+        ) {
           a.push(e.deltaY);
           if (e.deltaY === -0) {
             wheel(a[a.length - 2], data.length - 1);
@@ -131,7 +133,7 @@ export function Section() {
 }
 
 const Video = ({ src }: { src: string }) => {
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(src.includes("0st") ? false : true);
   return (
     <>
       {isLoading ? <Spinner /> : null}

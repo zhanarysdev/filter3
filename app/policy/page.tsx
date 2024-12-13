@@ -40,9 +40,14 @@ export default function Policy() {
      [&>h4]:font-bold  
 
      [&>p]:has-[span]:flex
-     [&>p]:has-[span]:items-start
+     [&>p]:has-[span]:items-center
      [&>p]:has-[span]:gap-[6px]
-     [&>p>span>img]:w-[5px]
+     [&>p>span>table]:w-[5px]
+     [&>p>span>table]:h-[5px]
+     [&>p>span>table]:bg-[black]
+     [&>p>span>table]:rounded
+
+     [&>p>a]:text-[blue]
 
       
       "
@@ -70,9 +75,7 @@ export default function Policy() {
           577, Almaty, Kazakhstan, 050021
         </p>
         <p>
-          <a href="mailto:community@filter.li" target="_blank">
-            Owner contact email:{" "}
-          </a>
+          Owner contact email:{" "}
           <a href="mailto:community@filter.li" target="_blank">
             community@filter.li
           </a>
@@ -173,19 +176,13 @@ export default function Policy() {
         </p>
         <h2>Cookie Policy</h2>
         <p>
+          This Application uses Trackers. To learn more, Users may consult the{" "}
           <a
             href="https://www.iubenda.com/privacy-policy/10919530/cookie-policy"
             target="_blank"
           >
-            This Application uses Trackers. To learn more, Users may consult the{" "}
+            Cookie Policy
           </a>
-          <a
-            href="https://www.iubenda.com/privacy-policy/10919530/cookie-policy"
-            target="_blank"
-          >
-            Cookie Polic
-          </a>
-          y<span>.</span>
         </p>
         <p>
           <br />
@@ -195,6 +192,8 @@ export default function Policy() {
         <p>
           The Owner may process Personal Data relating to Users if one of the
           following applies:{" "}
+        </p>
+        <p>
           <span>
             <table>
               <tr>
@@ -591,6 +590,8 @@ export default function Policy() {
         <p>
           Users may exercise certain rights regarding their Data within the
           limits of law, including the following:{" "}
+        </p>
+        <p>
           <span>
             <table>
               <tr>
@@ -641,6 +642,8 @@ export default function Policy() {
           </span>{" "}
           right to receive their Personal Data and have it transferred to
           another controller (data portability);{" "}
+        </p>
+        <p>
           <span>
             <table>
               <tr>
@@ -700,6 +703,8 @@ export default function Policy() {
         <p>
           We can process your personal information solely if we have a legal
           basis for such processing. Legal bases are as follows:{" "}
+        </p>
+        <p>
           <span>
             <table>
               <tr>
@@ -781,6 +786,8 @@ export default function Policy() {
           </span>{" "}
           the carrying out of a contract and its preliminary procedures, in
           cases where you are a party to said contract;{" "}
+        </p>
+        <p>
           <span>
             <table>
               <tr>
@@ -913,6 +920,8 @@ export default function Policy() {
           </span>{" "}
           obtain confirmation of the existence of processing activities on your
           personal information;{" "}
+        </p>
+        <p>
           <span>
             <table>
               <tr>
@@ -979,6 +988,8 @@ export default function Policy() {
           </span>{" "}
           obtain information on the possibility to provide or deny your consent
           and the consequences thereof;{" "}
+        </p>
+        <p>
           <span>
             <table>
               <tr>
@@ -1082,6 +1093,8 @@ export default function Policy() {
           </span>{" "}
           oppose a processing activity in cases where the processing is not
           carried out in compliance with the provisions of the law;{" "}
+        </p>
+        <p>
           <span>
             <table>
               <tr>
@@ -1225,6 +1238,8 @@ export default function Policy() {
           </span>{" "}
           when the transfer is necessary to protect your life or physical
           security or those of a third party;{" "}
+        </p>
+        <p>
           <span>
             <table>
               <tr>
@@ -1339,17 +1354,13 @@ export default function Policy() {
         </p>
         <p>
           <span>To know more about your rights you can refer to the “</span>
-          <u>Your</u> p<u>rivac</u>y<u> rights under US state laws</u>
+          Your privacy rights under US state laws
           <span>” section of our privacy policy.</span>
         </p>
         <p>
-          <span>
-            For more details on the collection of Personal Information, please
-            read the section “
-          </span>
-          <u>Detailed information on the processing</u> <u>&nbsp;of</u>{" "}
-          <u>Personal Data</u>
-          <span>” of our privacy policy.</span>
+          For more details on the collection of Personal Information, please
+          read the section “ Detailed information on the processing Personal
+          Data ” of our privacy policy.
         </p>
         <p>
           We won’t process your Information for unexpected purposes, or for
@@ -1656,15 +1667,15 @@ export default function Policy() {
           of Sale or Sharing and Targeted Advertising you can also use the
           privacy choices link provided on this Application.
         </p>
-        <p>
+        <p style={{ display: "block" }}>
           If you want to submit requests to opt out of Sale or Sharing and
           Targeted Advertising activities via a user-enabled{" "}
-          <b>global privacy control</b>
+          <b>global privacy control</b>, such as for example the Global Privacy
+          Control (
           <a href="https://globalprivacycontrol.org/" target="_blank">
-            , such as for example the Global Privacy Control (“
+            “ GPC”
           </a>
-          <span>GPC</span>”), you are free to do so and we will abide by such
-          request in a
+          ), you are free to do so and we will abide by such request in a
         </p>
         <p>frictionless manner.</p>
         <p>
