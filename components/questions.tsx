@@ -3,7 +3,7 @@ import { data } from "@/faq-data";
 import { xswiper } from "@/helpers";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import FuzzyHighlighter, { Highlighter } from "react-fuzzy-highlighter";
 import { BackButton } from "./back-button";
 import { Icon } from "./icons";
@@ -98,7 +98,7 @@ export function Questions({
         </FZ>
       </AnimatePresence>
 
-      {selected !== null && (
+      {!query && selected !== null && (
         <AnimatePresence>
           <div className="flex flex-col  md:justify-start h-full overflow-y-auto">
             <BackButton onClick={goBack} />
