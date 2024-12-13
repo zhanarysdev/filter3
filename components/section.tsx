@@ -13,6 +13,18 @@ import { Text } from "./text";
 import { Title } from "./title";
 import { Spinner } from "./spinner";
 
+function debounce(func: (...args: any[]) => void, wait: number) {
+  let timeout: NodeJS.Timeout;
+  return function executedFunction(...args: any[]) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 export function Section() {
   const { t } = useTranslation();
   const index = store((state) => state.index);
@@ -74,6 +86,7 @@ export function Section() {
     <section
       className="h-full  flex flex-col lg:flex-row mt-[30px] md:mt-[40px] lg:mt-0"
       onWheel={(e) => {
+        console.log(e);
         a.push(e.deltaY);
         if (Math.abs(e.deltaY) < Math.abs(80)) {
           if (e.deltaY === -0 || e.deltaY === 1) {
