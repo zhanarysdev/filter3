@@ -4,7 +4,7 @@ import { wheel } from "@/helpers";
 import { store } from "@/store";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Animate } from "./animate";
 import { Buttons } from "./buttons";
@@ -12,22 +12,23 @@ import { Container } from "./container";
 import { Text } from "./text";
 import { Title } from "./title";
 import { Spinner } from "./spinner";
-
-function debounce(func: (...args: any[]) => void, wait: number) {
-  let timeout: NodeJS.Timeout;
-  return function executedFunction(...args: any[]) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
+import WheelIndicator from "wheel-indicator";
 
 export function Section() {
   const { t } = useTranslation();
   const index = store((state) => state.index);
+
+  useEffect(() => {
+    const i = new WheelIndicator({
+      elem: document.body,
+      callback: (e) => {
+        wheel(e.deltaY, data.length - 1);
+      },
+    });
+    return () => {
+      i.destroy();
+    };
+  }, []);
 
   const showFooter = store((state) => state.showFooter);
   const increment = store((state) => state.increment);
@@ -80,22 +81,9 @@ export function Section() {
   const text = t(data[index].text);
   const texts = text.split("<br/>");
 
-  const a: number[] = [];
-
   return (
     <section
       className="h-full  flex flex-col lg:flex-row mt-[30px] md:mt-[40px] lg:mt-0"
-      onWheel={(e) => {
-        console.log(e);
-        a.push(e.deltaY);
-        if (Math.abs(e.deltaY) < Math.abs(80)) {
-          if (e.deltaY === -0 || e.deltaY === 1) {
-            wheel(a[a.length - 2], data.length - 1);
-          }
-        } else {
-          wheel(e.deltaY, data.length - 1);
-        }
-      }}
       onTouchStart={startTouch}
       onTouchMove={moveTouch}
     >

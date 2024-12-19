@@ -34,7 +34,7 @@ export default function Form() {
 
   return (
     <section className="lg:flex lg:h-full overflow-y-scroll">
-      <Container className="lg:flex-1 border-r border-[#DFDFDF] lg:pt-[162px] xl:pt-[280px]">
+      <Container className="lg:flex-1 lg:flex lg:flex-col justify-center">
         <BackButton />
         <div className="max-w-[619px]">
           <Title data={"Fill the form"} />

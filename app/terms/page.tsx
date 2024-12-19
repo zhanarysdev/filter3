@@ -17,6 +17,7 @@ export default function Terms() {
       </Container>
       <Container
         className="lg:flex-1
+lg:overflow-y-scroll
       "
       >
         <div className="mt-[20px] md:mt-[40px] lg:mt-[30px] [&>p]:mt-[5px] lg:[&>p]:mt-[10px] text">
