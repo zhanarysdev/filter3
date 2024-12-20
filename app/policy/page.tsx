@@ -40,14 +40,13 @@ export default function Policy() {
      [&>h4]:font-bold  
 
      [&>p]:has-[span]:flex
-     [&>p]:has-[span]:items-center
+     [&>p]:has-[span]:items-start
      [&>p]:has-[span]:gap-[6px]
-     [&>p>span>table]:w-[5px]
-     [&>p>span>table]:h-[5px]
-     [&>p>span>table]:bg-[black]
-     [&>p>span>table]:rounded
+     [&>p>table]:list-item
+     [&>p>table]:list-inside
 
      [&>p>a]:text-[blue]
+     [&>p>b>a]:text-[blue]
 
       
       "
@@ -194,88 +193,26 @@ export default function Policy() {
           following applies:{" "}
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          Users have given their consent for one or more specific purposes.
+          <table></table> Users have given their consent for one or more
+          specific purposes.
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          provision of Data is necessary for the performance of an agreement
-          with the User and/or for any pre-contractual obligations thereof;
+          <table></table> provision of Data is necessary for the performance of
+          an agreement with the User and/or for any pre-contractual obligations
+          thereof;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          processing is necessary for compliance with a legal obligation to
-          which the Owner is subject;
+          <table></table> processing is necessary for compliance with a legal
+          obligation to which the Owner is subject;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          processing is related to a task that is carried out in the public
-          interest or in the exercise of official authority vested in the Owner;
+          <table></table> processing is related to a task that is carried out in
+          the public interest or in the exercise of official authority vested in
+          the Owner;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          processing is necessary for the purposes of the legitimate interests
-          pursued by the Owner or by a third party.
+          <table></table> processing is necessary for the purposes of the
+          legitimate interests pursued by the Owner or by a third party.
         </p>
         <p>
           In any case, the Owner will gladly help to clarify the specific legal
@@ -292,42 +229,16 @@ export default function Policy() {
         </p>
         <p>Therefore:</p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          Personal Data collected for purposes related to the performance of a
-          contract between the Owner and the User shall be retained until such
-          contract has been fully performed.
+          <table></table> Personal Data collected for purposes related to the
+          performance of a contract between the Owner and the User shall be
+          retained until such contract has been fully performed.
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          Personal Data collected for the purposes of the Owner’s legitimate
-          interests shall be retained as long as needed to fulfill such
-          purposes. Users may find specific information regarding the legitimate
-          interests pursued by the Owner within the relevant sections of this
-          document or by contacting the Owner.
+          <table></table> Personal Data collected for the purposes of the
+          Owner’s legitimate interests shall be retained as long as needed to
+          fulfill such purposes. Users may find specific information regarding
+          the legitimate interests pursued by the Owner within the relevant
+          sections of this document or by contacting the Owner.
         </p>
         <p>
           The Owner may be allowed to retain Personal Data for a longer period
@@ -358,126 +269,39 @@ export default function Policy() {
           permitted by law:
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          <b>Withdraw their consent at any time. </b>Users have the right to
-          withdraw consent where they have previously given their consent to the
-          processing of their Personal Data.
+          <table></table> <b>Withdraw their consent at any time. </b>Users have
+          the right to withdraw consent where they have previously given their
+          consent to the processing of their Personal Data.
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          <b>Object to processing of their Data. </b>Users have the right to
-          object to the processing of their Data if the processing is carried
-          out on a legal basis other than consent.
+          <table></table> <b>Object to processing of their Data. </b>Users have
+          the right to object to the processing of their Data if the processing
+          is carried out on a legal basis other than consent.
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          <b>Access their Data. </b>Users have the right to learn if Data is
-          being processed by the Owner, obtain disclosure regarding certain
-          aspects of the processing and obtain a copy of the Data undergoing
-          processing.
+          <table></table> <b>Access their Data. </b>Users have the right to
+          learn if Data is being processed by the Owner, obtain disclosure
+          regarding certain aspects of the processing and obtain a copy of the
+          Data undergoing processing.
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          <b>Verify and seek rectification. </b>Users have the right to verify
-          the accuracy of their Data and ask for it to be updated or corrected.
+          <table></table> <b>Verify and seek rectification. </b>Users have the
+          right to verify the accuracy of their Data and ask for it to be
+          updated or corrected.
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          <b>Restrict the processing of their Data. </b>Users have the right to
-          restrict the processing of their Data. In this case, the Owner will
-          not process their Data for any purpose other than storing it.
+          <table></table> <b>Restrict the processing of their Data. </b>Users
+          have the right to restrict the processing of their Data. In this case,
+          the Owner will not process their Data for any purpose other than
+          storing it.
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
+          <table></table>{" "}
           <b>Have their Personal Data deleted or otherwise removed. </b>Users
           have the right to obtain the erasure of their Data from the Owner.
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
+          <table></table>{" "}
           <b>
             Receive their Data and have it transferred to another controller.{" "}
           </b>
@@ -486,21 +310,8 @@ export default function Policy() {
           it transmitted to another controller without any hindrance.
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          <b>Lodge a complaint. </b>Users have the right to bring a claim before
-          their competent data protection authority.
+          <table></table> <b>Lodge a complaint. </b>Users have the right to
+          bring a claim before their competent data protection authority.
         </p>
         <p>
           Users are also entitled to learn about the legal basis for Data
@@ -518,13 +329,14 @@ export default function Policy() {
         </p>
         <h4>
           Where Personal Data is processed for a public interest, in the
-          exercise of an official authority vested in the Owner or for
-        </h4>
-        <h4>
-          the purposes of the legitimate interests pursued by the Owner, Users
-          may object to such processing by providing a ground related to their
+          exercise of an official authority vested in the Owner or for the
+          purposes of the legitimate interests pursued by the Owner, Users may
+          object to such processing by providing a ground related to their
           particular situation to justify the objection.
         </h4>
+        <p>
+          <br />
+        </p>
         <h4>
           Users must know that, however, should their Personal Data be processed
           for direct marketing purposes, they can object to that processing at
@@ -592,72 +404,21 @@ export default function Policy() {
           limits of law, including the following:{" "}
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          right of access to Personal Data;
+          <table></table> right of access to Personal Data;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          right to object to the processing of their Personal Data (which also
-          allows Users to demand that processing of Personal Data be restricted,
-          Personal Data be deleted or destroyed, specific disclosures of
-          Personal Data to third parties be prohibited);
+          <table></table> right to object to the processing of their Personal
+          Data (which also allows Users to demand that processing of Personal
+          Data be restricted, Personal Data be deleted or destroyed, specific
+          disclosures of Personal Data to third parties be prohibited);
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          right to receive their Personal Data and have it transferred to
-          another controller (data portability);{" "}
+          <table></table> right to receive their Personal Data and have it
+          transferred to another controller (data portability);{" "}
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          right to ask for incorrect Personal Data to be corrected.
+          <table></table> right to ask for incorrect Personal Data to be
+          corrected.
         </p>
         <p>
           <br />
@@ -705,170 +466,44 @@ export default function Policy() {
           basis for such processing. Legal bases are as follows:{" "}
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          your consent to the relevant processing activities;
+          <table></table> your consent to the relevant processing activities;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          compliance with a legal or regulatory obligation that lies with us;
+          <table></table> compliance with a legal or regulatory obligation that
+          lies with us;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          the carrying out of public policies provided in laws or regulations or
-          based on contracts, agreements and similar legal instruments;
+          <table></table> the carrying out of public policies provided in laws
+          or regulations or based on contracts, agreements and similar legal
+          instruments;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          studies conducted by research entities, preferably carried out on
-          anonymized personal information;
+          <table></table> studies conducted by research entities, preferably
+          carried out on anonymized personal information;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          the carrying out of a contract and its preliminary procedures, in
-          cases where you are a party to said contract;{" "}
+          <table></table> the carrying out of a contract and its preliminary
+          procedures, in cases where you are a party to said contract;{" "}
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          the exercising of our rights in judicial, administrative or
-          arbitration procedures;
+          <table></table> the exercising of our rights in judicial,
+          administrative or arbitration procedures;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          protection or physical safety of yourself or a third party;
+          <table></table> protection or physical safety of yourself or a third
+          party;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          the protection of health – in procedures carried out by health
-          entities or professionals;
+          <table></table> the protection of health – in procedures carried out
+          by health entities or professionals;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          our legitimate interests, provided that your fundamental rights and
-          liberties do not prevail over such interests; and
+          <table></table> our legitimate interests, provided that your
+          fundamental rights and liberties do not prevail over such interests;
+          and
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          credit protection.
+          <table></table> credit protection.
         </p>
         <p>
           To find out more about the legal bases, you can contact us at any time
@@ -905,231 +540,63 @@ export default function Policy() {
         </p>
         <p>You have the right to:</p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          obtain confirmation of the existence of processing activities on your
-          personal information;{" "}
+          <table></table> obtain confirmation of the existence of processing
+          activities on your personal information;{" "}
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          access to your personal information;
+          <table></table> access to your personal information;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          have incomplete, inaccurate or outdated personal information
-          rectified;
+          <table></table> have incomplete, inaccurate or outdated personal
+          information rectified;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          obtain the anonymization, blocking or elimination of your unnecessary
-          or excessive personal information, or of information that is not being
-          processed in compliance with the LGPD;
+          <table></table> obtain the anonymization, blocking or elimination of
+          your unnecessary or excessive personal information, or of information
+          that is not being processed in compliance with the LGPD;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          obtain information on the possibility to provide or deny your consent
-          and the consequences thereof;{" "}
+          <table></table> obtain information on the possibility to provide or
+          deny your consent and the consequences thereof;{" "}
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          obtain information about the third parties with whom we share your
-          personal information;
+          <table></table> obtain information about the third parties with whom
+          we share your personal information;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          obtain, upon your express request, the portability of your personal
-          information (except for anonymized information) to another service or
-          product provider, provided that our commercial and industrial secrets
-          are safeguarded;
+          <table></table> obtain, upon your express request, the portability of
+          your personal information (except for anonymized information) to
+          another service or product provider, provided that our commercial and
+          industrial secrets are safeguarded;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          obtain the deletion of your personal information being processed if
-          the processing was based upon your consent, unless one or more
-          exceptions provided for in art. 16 of the LGPD apply;
+          <table></table> obtain the deletion of your personal information being
+          processed if the processing was based upon your consent, unless one or
+          more exceptions provided for in art. 16 of the LGPD apply;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          revoke your consent at any time;
+          <table></table> revoke your consent at any time;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          lodge a complaint related to your personal information with the ANPD
-          (the National Data Protection Authority) or with consumer protection
-          bodies;
+          <table></table> lodge a complaint related to your personal information
+          with the ANPD (the National Data Protection Authority) or with
+          consumer protection bodies;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          oppose a processing activity in cases where the processing is not
-          carried out in compliance with the provisions of the law;{" "}
+          <table></table> oppose a processing activity in cases where the
+          processing is not carried out in compliance with the provisions of the
+          law;{" "}
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          request clear and adequate information regarding the criteria and
-          procedures used for an automated decision; and
+          <table></table> request clear and adequate information regarding the
+          criteria and procedures used for an automated decision; and
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          request the review of decisions made solely on the basis of the
-          automated processing of your personal information, which affect your
-          interests. These include decisions to define your personal,
-          professional, consumer and credit profile, or aspects of your
-          personality.
+          <table></table> request the review of decisions made solely on the
+          basis of the automated processing of your personal information, which
+          affect your interests. These include decisions to define your
+          personal, professional, consumer and credit profile, or aspects of
+          your personality.
         </p>
         <p>
           You will never be discriminated against, or otherwise suffer any sort
@@ -1205,108 +672,31 @@ export default function Policy() {
           Brazilian territory in the following cases:
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          when the transfer is necessary for international legal cooperation
-          between public intelligence, investigation and prosecution bodies,
-          according to the legal means provided by the international law;
+          <table></table> when the transfer is necessary for international legal
+          cooperation between public intelligence, investigation and prosecution
+          bodies, according to the legal means provided by the international
+          law;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          when the transfer is necessary to protect your life or physical
-          security or those of a third party;{" "}
+          <table></table> when the transfer is necessary to protect your life or
+          physical security or those of a third party;{" "}
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          when the transfer is authorized by the ANPD;
+          <table></table> when the transfer is authorized by the ANPD;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          when the transfer results from a commitment undertaken in an
-          international cooperation agreement;
+          <table></table> when the transfer results from a commitment undertaken
+          in an international cooperation agreement;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          when the transfer is necessary for the execution of a public policy or
-          legal attribution of public service;
+          <table></table> when the transfer is necessary for the execution of a
+          public policy or legal attribution of public service;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          when the transfer is necessary for compliance with a legal or
-          regulatory obligation, the carrying out of a contract or preliminary
-          procedures related to a contract, or the regular exercise of rights in
-          judicial, administrative or arbitration procedures.
+          <table></table> when the transfer is necessary for compliance with a
+          legal or regulatory obligation, the carrying out of a contract or
+          preliminary procedures related to a contract, or the regular exercise
+          of rights in judicial, administrative or arbitration procedures.
         </p>
         <p>
           <br />
@@ -1347,20 +737,27 @@ export default function Policy() {
           a California resident to get a general idea of what types of Personal
           Information are collected.
         </p>
-        <p>
-          <span>ℹ </span>You can read the definitions of these concepts inside
-          the “<span>Definitions and legal references section</span>” of the
-          privacy policy.
+        <p style={{ display: "inline" }}>
+          <span>ℹ️</span>You can read the definitions of these concepts inside
+          the{" "}
+          <a href="#definitions_legal">
+            “Definitions and legal references section”
+          </a>{" "}
+          of the privacy policy.
         </p>
         <p>
-          <span>To know more about your rights you can refer to the “</span>
-          Your privacy rights under US state laws
-          <span>” section of our privacy policy.</span>
+          <b style={{ display: "inline" }}>
+            To know more about your rights you can refer to the{" "}
+            <a href="#us_state_laws">
+              “Your privacy rights under US state laws”
+            </a>{" "}
+            section of our privacy policy.
+          </b>
         </p>
         <p>
           For more details on the collection of Personal Information, please
-          read the section “ Detailed information on the processing Personal
-          Data ” of our privacy policy.
+          read the section “Detailed information on the processing Personal
+          Data” of our privacy policy.
         </p>
         <p>
           We won’t process your Information for unexpected purposes, or for
@@ -1385,69 +782,45 @@ export default function Policy() {
         <p>
           <br />
         </p>
-        <h3>Your privacy rights under US state laws</h3>
+        <h3 id="us_state_laws">Your privacy rights under US state laws</h3>
         <p>
           You may exercise certain rights regarding your Personal Information.
           In particular, to the extent permitted by applicable law, you have:
         </p>
         <p />
-        <h4>
-          the right to access Personal Information: the right to know.{" "}
-          <span>
-            You have the right to request that we confirm whether or not we are
-            processing your Personal Information. You also have the right to
-            access such Personal Information;
-          </span>
-        </h4>
-        <p />
-        <h4>
-          the right to correct inaccurate Personal Information.{" "}
-          <span>
-            You have the right to request that we correct any inaccurate
-            Personal Information we maintain about you;
-          </span>
-        </h4>
-        <p />
-        <h4>
-          the right to request the deletion of your Personal Information.{" "}
-          <span>
-            You have the right to request that we delete any of your Personal
-            Information;
-          </span>
-        </h4>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
+          <table></table>
+          <b> the right to access Personal Information: the right to know. </b>
+          You have the right to request that we confirm whether or not we are
+          processing your Personal Information. You also have the right to
+          access such Personal Information;
+        </p>
+        <p />
+        <p>
+          <table></table>
+          <b> the right to correct inaccurate Personal Information. </b>
+          You have the right to request that we correct any inaccurate Personal
+          Information we maintain about you;
+        </p>
+        <p />
+        <p>
+          <table></table>
+          <b>
+            {" "}
+            the right to request the deletion of your Personal Information.{" "}
+          </b>
+          You have the right to request that we delete any of your Personal
+          Information;
+        </p>
+        <p>
+          <table></table>{" "}
           <b>the right to obtain a copy of your Personal Information. </b>We
           will provide your Personal Information in a portable and usable format
           that allows you to transfer data easily to another entity – provided
           that this is technically feasible;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
+          <table></table>{" "}
           <b>
             the right to opt out from the Sale of your Personal Information;{" "}
           </b>
@@ -1455,20 +828,7 @@ export default function Policy() {
           rights.
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          <b>the right to non-discrimination.</b>
+          <table></table> <b>the right to non-discrimination.</b>
         </p>
         <p>
           <br />
@@ -1482,38 +842,14 @@ export default function Policy() {
           United States, as a User residing in California, you have
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
+          <table></table>{" "}
           <b>
             The right to opt out of the Sharing of your Personal Information{" "}
           </b>
           for cross-context behavioral advertising;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
+          <table></table>{" "}
           <b>
             The right to request to limit our use or disclosure of your
             Sensitive Personal Information{" "}
@@ -1540,38 +876,13 @@ export default function Policy() {
           Texas and Oregon, you have
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          <b>The right to opt out of </b>the processing of your personal
-          information for <b>Targeted Advertising or profiling </b>in
+          <table></table> <b>The right to opt out of </b>the processing of your
+          personal information for <b>Targeted Advertising or profiling </b>in
           furtherance of decisions that produce legal or similarly significant
           effects concerning you;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
+          <table></table>{" "}
           <b>
             The right to freely give, deny or withdraw your consent for the
             processing of your Sensitive Personal Information.
@@ -1595,36 +906,11 @@ export default function Policy() {
           United States, as a User residing in Utah, you have
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8SeHQBaXSGkO7RLpKMWrVJBrXAAqv2cd3yAXwYEen/tpcNAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
-          <b>The right to opt out of </b>the processing of your Personal
-          Information for <b>Targeted Advertising</b>;
+          <table></table> <b>The right to opt out of </b>the processing of your
+          Personal Information for <b>Targeted Advertising</b>;
         </p>
         <p>
-          <span>
-            <table>
-              <tr>
-                <td>
-                  <img
-                    width="4"
-                    height="4"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQImV3LMREAMAwDsb8yeG5BaW7GkO7RLpKMWrVJBrXAAqv2cd3yAYDMEgmm52pnAAAAAElFTkSuQmCC"
-                  />
-                </td>
-              </tr>
-            </table>
-          </span>{" "}
+          <table></table>{" "}
           <b>
             The right to opt out of the processing of your Sensitive Personal
             Information.{" "}
@@ -1764,7 +1050,7 @@ export default function Policy() {
         <p>
           <br />
         </p>
-        <h3>Definitions and legal references</h3>
+        <h3 id="definitions_legal">Definitions and legal references</h3>
         <h4>Personal Data (or Data) / Personal Information (or Information)</h4>
         <p>
           <br />

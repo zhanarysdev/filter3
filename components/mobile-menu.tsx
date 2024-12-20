@@ -68,7 +68,7 @@ export function MobileMenu({
               className="flex justify-center items-center gap-[5px] hover:text-white"
               href={"#"}
             >
-              <Icon name={"GoLink"} className="mt-[4px]" />
+              <Icon name={"GoLink"} className="mt-[1px]" />
               <span>Instagram</span>
             </Link>
           </div>

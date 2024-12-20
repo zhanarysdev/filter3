@@ -38,7 +38,7 @@ export function Questions({
     <div
       onTouchStart={startTouch}
       onTouchMove={(e) => xswiper(e, inix, iniy, setinix, setiniy, goBack)}
-      className="fixed top-[28px] md:top-[34px] lg:top-0 left-0 flex lg:left-auto right-0 lg:right-auto bottom-0 lg:h-full lg:p-[30px] p-[10px] md:p-[20px] bg-white transition-all"
+      className="fixed overflow-y-auto top-[28px] md:top-[34px] lg:top-0 left-0 flex lg:left-auto right-0 lg:right-auto bottom-0 lg:h-full lg:p-[30px] p-[10px] md:p-[20px] bg-white transition-all"
       style={{
         transform:
           selected !== null || query ? "translateX(0)" : "translateX(100vw)",

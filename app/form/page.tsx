@@ -8,17 +8,23 @@ import { Textarea } from "@/components/textarea";
 import { Title } from "@/components/title";
 import UploadInput from "@/components/upload-input";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 
 interface IForm {
   email: string;
   type: string;
+  some: string;
+  subject: string;
+  description: string;
 }
 const schema = yup
   .object({
     email: yup.string().email().required(),
     type: yup.string().required(),
+    some: yup.string().required(),
+    subject: yup.string().required(),
+    description: yup.string().required(),
   })
   .required();
 
@@ -26,11 +32,14 @@ export default function Form() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    control,
+    formState: { errors, isValid },
   } = useForm<IForm>({
     resolver: yupResolver(schema),
   });
   const onSubmit = (data: IForm) => console.log(data);
+
+  console.log(errors);
 
   return (
     <section className="lg:flex lg:h-full overflow-y-scroll">
@@ -56,13 +65,21 @@ export default function Form() {
             >
               Please choose a request type below
             </label>
-            <Select
-              options={[
-                { value: 0, label: "I am a creator and I need support" },
-                { value: 1, label: "test" },
-                { value: 2, label: "test" },
-              ]}
-              {...register("type")}
+            <Controller
+              control={control}
+              name="type"
+              render={({ field: { onChange, value } }) => (
+                <Select
+                  onChange={onChange}
+                  value={value}
+                  error={errors.type?.message}
+                  options={[
+                    { value: 0, label: "I am a creator and I need support" },
+                    { value: 1, label: "test" },
+                    { value: 2, label: "test" },
+                  ]}
+                />
+              )}
             />
           </div>
 
@@ -71,9 +88,15 @@ export default function Form() {
               htmlFor="email"
               className="text-[14px] leading-[18px] font-bold mb-[8px]"
             >
-              Your email address*
+              Your email address<span className="text-[#BF1919]">*</span>
             </label>
-            <Input placeholder="Email" id="email" type="text" />
+            <Input
+              placeholder="Email"
+              id="email"
+              type="text"
+              error={errors.email?.message}
+              {...register("email")}
+            />
           </div>
 
           <div className="flex flex-col">
@@ -81,13 +104,25 @@ export default function Form() {
               htmlFor="type"
               className="text-[14px] leading-[18px] font-bold mb-[8px]"
             >
-              Please select one of the options below*
+              Please select one of the options below
+              <span className="text-[#BF1919]">*</span>
             </label>
-            <Select
-              options={[
-                { value: 0, label: "-" },
-                { value: 1, label: "test" },
-              ]}
+
+            <Controller
+              control={control}
+              name="some"
+              render={({ field: { onChange, value } }) => (
+                <Select
+                  onChange={onChange}
+                  value={value}
+                  error={errors.some?.message}
+                  options={[
+                    { value: 0, label: "I am a creator and I need support" },
+                    { value: 1, label: "test" },
+                    { value: 2, label: "test" },
+                  ]}
+                />
+              )}
             />
           </div>
 
@@ -96,9 +131,15 @@ export default function Form() {
               htmlFor="email"
               className="text-[14px] leading-[18px] font-bold mb-[8px]"
             >
-              Subject*
+              Subject<span className="text-[#BF1919]">*</span>
             </label>
-            <Input placeholder="Email" id="email" type="text" />
+            <Input
+              placeholder="Email"
+              id="email"
+              type="text"
+              error={errors.subject?.message}
+              {...register("subject")}
+            />
             <span className="text-[#929292] text-[14px] leading-[18px] mt-[8px]">
               Please use a few words to summarize your question
             </span>
@@ -109,9 +150,14 @@ export default function Form() {
               htmlFor="email"
               className="text-[14px] leading-[18px] font-bold mb-[8px]"
             >
-              Description*
+              Description<span className="text-[#BF1919]">*</span>
             </label>
-            <Textarea placeholder="Email" id="email" />
+            <Textarea
+              placeholder="Email"
+              id="email"
+              error={errors.description?.message}
+              {...register("description")}
+            />
             <span className="text-[#929292] text-[14px] leading-[18px] mt-[8px]">
               Please enter the details of your request. A member of our team
               will reach out with a response.
@@ -127,8 +173,9 @@ export default function Form() {
             </label>
             <UploadInput />
           </div>
-
-          <button className="bg-[#929292] text-[#F0F0F0] text-[14px] font-bold leading-[18px] p-[16px] rounded-[8px] mt-auto">
+          <button
+            className={`bg-[#929292] text-[#F0F0F0] text-[14px] font-bold leading-[18px] p-[16px] rounded-[8px] mt-auto ${isValid && "bg-primary"}`}
+          >
             Submit
           </button>
         </form>

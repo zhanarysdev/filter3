@@ -1,6 +1,13 @@
+"use client";
 
-'use client'
+import { ComponentProps, forwardRef } from "react";
 
-import { ComponentProps } from "react"
-
-export const Textarea = (props: ComponentProps<"textarea">) => <textarea className={"rounded-[8px] bg-[#FFFFFF] p-[16px] w-full"} {...props} />
+export const Textarea = forwardRef(
+  (props: ComponentProps<"textarea"> & { error?: string }, ref) => (
+    <textarea
+      ref={ref}
+      className={`${props.error && "bg-[#ecdada] text-[#BF1919] placeholder:text-[#BF1919]"} rounded-[8px] bg-[#FFFFFF] p-[16px] w-full`}
+      {...props}
+    />
+  )
+);

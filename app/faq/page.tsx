@@ -40,7 +40,7 @@ export default function Faq() {
             layout
             className={
               focused
-                ? "fixed top-[10px] left-[10px] right-[10px] md:top-[20px] md:left-[20px] md:right-[20px] flex-col bg-[#F0F0F0] bottom-0 z-[9999]"
+                ? "fixed top-[10px] left-[10px] right-[10px] md:top-[20px] md:left-[20px] md:right-[20px] overflow-y-auto flex-col bg-[#F0F0F0] bottom-0 z-[9999]"
                 : "relative"
             }
           >

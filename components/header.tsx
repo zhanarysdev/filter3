@@ -14,7 +14,7 @@ export function Header() {
   const goHome = store((state) => state.goHome);
 
   return (
-    <header className="!z-[999] lg:fixed lg:top-[21px] lg:right-[50%] lg:left-0">
+    <header className="!z-[999] pb-[10px] lg:fixed lg:top-[21px] lg:right-[50%] lg:left-0">
       <Container>
         <div
           className={`flex justify-between items-center right-[10px] left-[10px] z-50 ${isOpen ? "absolute" : "static"}`}
