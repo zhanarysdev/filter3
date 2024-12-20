@@ -45,7 +45,8 @@ export default function Faq() {
 
   return (
     <AnimatePresence mode="wait">
-      <section className="lg:flex lg:h-full overflow-y-scroll" ref={ref}>
+      <section className="lg:flex lg:h-full relative overflow-y-scroll">
+        <div ref={ref}></div>
         <Container className="lg:flex-1 lg:flex lg:flex-col justify-center">
           <BackButton />
           <div className="lg:max-w-[619px] md:max-w-[525px]">
