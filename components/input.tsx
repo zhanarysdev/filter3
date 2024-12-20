@@ -3,7 +3,7 @@
 import { ComponentProps, forwardRef } from "react";
 
 export const Input = forwardRef(
-  (props: ComponentProps<"input"> & { error?: string }, ref) => (
+  (props: ComponentProps<"input"> & { error?: string }, ref: any) => (
     <input
       ref={ref}
       className={`rounded-[8px] bg-[#FFFFFF] p-[16px] w-full ${props.error && "bg-[#ecdada] text-[#BF1919] placeholder:text-[#BF1919]"}`}
@@ -11,3 +11,5 @@ export const Input = forwardRef(
     />
   )
 );
+
+Input.displayName = "Input";
