@@ -174,12 +174,13 @@ export default function Policy() {
           <br />
         </p>
         <h2>Cookie Policy</h2>
-        <p>
+        <p style={{ display: "unset" }}>
           This Application uses Trackers. To learn more, Users may consult the{" "}
           <a
             href="https://www.iubenda.com/privacy-policy/10919530/cookie-policy"
             target="_blank"
           >
+            {" "}
             Cookie Policy
           </a>
         </p>

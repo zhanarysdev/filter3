@@ -21,7 +21,7 @@ export function Search({
         value={value}
         onFocus={onFocus}
         onChange={(e) => onChange(e.target.value)}
-        className=" bg-transparent p-[12px] pl-[6px] w-full text-[14px] leading-[18px] font-medium focus:outline-none"
+        className=" bg-transparent p-[12px] pl-[6px] w-full text-[16px] leading-[18px] font-medium focus:outline-none"
         placeholder="Search"
       />
     </div>

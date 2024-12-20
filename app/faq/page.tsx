@@ -8,7 +8,7 @@ import { Text } from "@/components/text";
 import { Title } from "@/components/title";
 import { categories, data } from "@/faq-data";
 import { AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { Icon } from "@/components/icons";
 import FuzzyHighlighter, { Highlighter } from "react-fuzzy-highlighter";
@@ -20,14 +20,32 @@ export default function Faq() {
   const [selected, setSelected] = useState<null | number>(null);
   const [value, onChange] = useState("");
   const [focused, setFocused] = useState(false);
+  const ref = useRef<null | HTMLDivElement>(null);
 
   const searchHandler = (v: string) => {
     onChange(v);
   };
 
+  useEffect(() => {
+    let t;
+    if (focused) {
+      t = setTimeout(() => {
+        if (ref.current) {
+          ref.current.scrollIntoView({
+            block: "end",
+            behavior: "instant",
+          });
+        }
+      }, 100);
+    }
+    return () => {
+      clearTimeout(t);
+    };
+  }, [focused]);
+
   return (
     <AnimatePresence mode="wait">
-      <section className="lg:flex lg:h-full overflow-y-scroll">
+      <section className="lg:flex lg:h-full overflow-y-scroll" ref={ref}>
         <Container className="lg:flex-1 lg:flex lg:flex-col justify-center">
           <BackButton />
           <div className="lg:max-w-[619px] md:max-w-[525px]">
@@ -131,7 +149,10 @@ export default function Faq() {
           <div className="grid grid-cols-3 md:grid-cols-4 gap-[10px] md:gap-[20px] lg:gap-[10px] mt-[20px] md:mt-[40px] lg:mt-[30px] lg:max-w-[619px]">
             {categories.map((el, index) => (
               <div
-                onClick={() => setSelected(el.id)}
+                onClick={() => {
+                  onChange("");
+                  setSelected(el.id);
+                }}
                 className="border border-[#929292] rounded-[16px] flex flex-col justify-start p-[12px] md:p-[16px] items-start gap-[8px]  flex-1 min-w-[104px] md:min-w-[167px] min-h-[104px] md:min-h-[167px] lg:min-w-[148px] lg:min-h-[148px] hover:bg-primary hover:text-background cursor-pointer"
                 key={index}
               >

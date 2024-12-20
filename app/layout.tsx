@@ -29,7 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Monetize your taste</title>
+        <title>Filter: Curated Content</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
         <meta
           content="Explore new ones and subscribe to your favorite influencers, follow their selection and learn more about their taste"
           name="description"
