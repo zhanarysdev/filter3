@@ -1,7 +1,6 @@
 "use client";
 import { Manrope } from "next/font/google";
-import "../i18n";
-import "./globals.css";
+import "../globals.css";
 
 const manrope = Manrope({
   variable: "--font-manrope-sans",

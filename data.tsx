@@ -1,8 +1,8 @@
-import f from "./app/assets/0st.mp4";
-import s from "./app/assets/1st.mp4";
-import t from "./app/assets/2st.mp4";
-import fo from "./app/assets/3st.mp4";
-import fi from "./app/assets/4st.mp4";
+import f from "./app/(main)/assets/0st.mp4";
+import s from "./app/(main)/assets/1st.mp4";
+import t from "./app/(main)/assets/2st.mp4";
+import fo from "./app/(main)/assets/3st.mp4";
+import fi from "./app/(main)/assets/4st.mp4";
 
 export const data = [
   {
