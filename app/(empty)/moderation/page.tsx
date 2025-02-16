@@ -31,12 +31,18 @@ const data = [
 ];
 
 export default function Moderation() {
+  const token = localStorage.getItem("token");
+  console.log(token);
   useEffect(() => {
     fetch("https://api.filter.li/api/v1/influencer/list", {
+      method: "POST",
+      body: JSON.stringify({
+        page: 1,
+        status: 1,
+      }),
       headers: {
+        Authorization: `Bearer ${token}`,
         Accept: "application/json",
-        Authorization:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzcwNDY2NzgsImlkIjoiYjQ5M2NmNTAtNjQ1MS00MDUwLWI1NTgtZGQ5NDkwNDRlMTU4In0.CiVHLWhRXDltA6ZWQSdGSTdV0_XDI1yppDEBrUlstXQ",
       },
     })
       .then((res) => res.json())
