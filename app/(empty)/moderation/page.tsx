@@ -1,7 +1,13 @@
 "use client";
 
+import { Modal } from "@/components/modal";
+import Radio from "@/components/radio";
+import { Spinner } from "@/components/spinner";
 import { Table } from "@/components/table";
-import { useEffect } from "react";
+import { fetcher } from "@/fetcher";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import useSWR from "swr";
 
 const labels = [
   {
@@ -9,11 +15,11 @@ const labels = [
     title: "ID",
   },
   {
-    key: "name",
+    key: "fullName",
     title: "name",
   },
   {
-    key: "status",
+    key: "influencerStatus",
     title: "status",
   },
 ];
@@ -32,22 +38,29 @@ const data = [
 
 export default function Moderation() {
   const token = localStorage.getItem("token");
-  console.log(token);
-  useEffect(() => {
-    fetch("https://api.filter.li/api/v1/influencer/list", {
+  const [isOpen, setOpen] = useState<null | string>(null);
+  const [status, setStatus] = useState<any>(null);
+  const { data, isLoading, mutate } = useSWR(
+    { url: "influencer/list", body: JSON.stringify({ page: 1 }) },
+    fetcher
+  );
+  const save = async () => {
+    const res = await fetch("https://api.filter.li/api/v1/influencer/confirm", {
       method: "POST",
-      body: JSON.stringify({
-        page: 1,
-        status: 1,
-      }),
       headers: {
         Authorization: `Bearer ${token}`,
-        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
-  }, []);
+      body: JSON.stringify({
+        userId: isOpen,
+        status: status === "Принять" ? 1 : 3,
+      }),
+    }).then((res) => res.json());
+    mutate();
+    setStatus(null);
+  };
+  if (isLoading) return <Spinner />;
+
   return (
     <div className="p-4">
       <div className="mb-16">
@@ -55,7 +68,52 @@ export default function Moderation() {
           <div className="text-2xl font-bold leading-7">Модерация</div>
         </div>
       </div>
-      <Table data={data} labels={labels} onEdit={(id) => console.log(id)} />
+      <Table
+        data={data ? data.items : []}
+        labels={labels}
+        onEdit={(id) => setOpen(id)}
+      />
+      {isOpen &&
+        createPortal(
+          <Modal
+            onSave={() => {
+              save();
+              setOpen(null);
+
+              setStatus(null);
+            }}
+            label={"Edit"}
+            close={() => {
+              setOpen(null);
+              setStatus(null);
+            }}
+          >
+            <Radio
+              setStatus={setStatus}
+              options={[
+                {
+                  key: "1",
+                  title: "Принять",
+                  checked: status
+                    ? true
+                    : data.items.find(
+                        (el) => el.id === isOpen && el.influencerStatus == 1
+                      ),
+                },
+                {
+                  key: "3",
+                  title: "Отклонить",
+                  checked: status
+                    ? true
+                    : data.items.find(
+                        (el) => el.id === isOpen && el.influencerStatus == 3
+                      ),
+                },
+              ]}
+            />
+          </Modal>,
+          document.body
+        )}
     </div>
   );
 }

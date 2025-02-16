@@ -1,14 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Radio({ options }) {
+export default function Radio({ options, setStatus }) {
   const [checked, setChecked] = useState<null | string>(null);
+  console.log(options);
+  useEffect(() => {
+    options.map((el) => {
+      if (el.checked) {
+        setChecked(el.title);
+      }
+    });
+  }, [options]);
   return (
     <div className="flex flex-col gap-3">
       {options.map((option) => (
         <label
           key={option.title}
           className="flex items-center justify-between cursor-pointer"
-          onClick={() => setChecked(option.title)}
+          onClick={() => {
+            setStatus(option.title);
+            setChecked(option.title);
+          }}
         >
           <span className="text-base leading-5 font-semibold">
             {option.title}
