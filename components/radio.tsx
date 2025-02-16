@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 
-export default function Radio({ options, setStatus }) {
+export default function Radio({ options, setStatus }: any) {
   const [checked, setChecked] = useState<null | string>(null);
-  console.log(options);
   useEffect(() => {
     options.map((el) => {
       if (el.checked) {
@@ -17,7 +16,9 @@ export default function Radio({ options, setStatus }) {
           key={option.title}
           className="flex items-center justify-between cursor-pointer"
           onClick={() => {
-            setStatus(option.title);
+            if (setStatus) {
+              setStatus(option.title);
+            }
             setChecked(option.title);
           }}
         >
