@@ -113,7 +113,7 @@ export default function Moderation() {
 
               setStatus(null);
             }}
-            label={"Edit"}
+            label={"Изменить"}
             close={() => {
               setOpen(null);
               setStatus(null);

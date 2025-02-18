@@ -14,7 +14,7 @@ export default function Radio({ options, setStatus }: any) {
       {options.map((option) => (
         <label
           key={option.title}
-          className="flex items-center justify-between cursor-pointer"
+          className="flex text-white items-center justify-between cursor-pointer"
           onClick={() => {
             if (setStatus) {
               setStatus(option.title);
