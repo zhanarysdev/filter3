@@ -23,7 +23,15 @@ export function Table({
   onEdit?: (id: string) => void;
   goTo?: string;
 }) {
-  const renderContent = (item, el, index) => {
+  const renderContent = (item, el) => {
+    if (item.link && el[item.key] === "@") {
+      return "-";
+    }
+
+    if (item.link && (item.key === "youtube" || item.key === "tiktok")) {
+      return <Link href={`${item.link}${el[item.key]}`}>{el[item.key]}</Link>;
+    }
+
     if (item.link) {
       const link = el[item.key].split("@");
       return <Link href={`${item.link}${link[1]}`}>{el[item.key]}</Link>;
@@ -108,7 +116,7 @@ export function Table({
                       key={item.key}
                       className="text-left border-b border-lightGrey font-semibold text-base leading-5 p-3 py-2"
                     >
-                      {renderContent(item, el, index)}
+                      {renderContent(item, el)}
                     </td>
                   ))}
                   {(onEdit || goTo) && (

@@ -23,8 +23,19 @@ const labels = [
     title: "username",
   },
   {
-    key: "socials",
-    title: "Cоц сети",
+    key: "instagram",
+    title: "Instagram",
+    link: "https://www.instagram.com/",
+  },
+  {
+    key: "tiktok",
+    title: "Tiktok",
+    link: "https://www.tiktok.com/",
+  },
+  {
+    key: "youtube",
+    title: "Youtube",
+    link: "https://www.youtube.com/",
   },
   {
     key: "credits",
@@ -59,7 +70,13 @@ export default function Moderation() {
   }, []);
   useEffect(() => {
     if (data?.items) {
-      setFilteredData(data.items);
+      const res = data.items.map((el) => ({
+        ...el,
+        instagram: `@${el.influencer.instagram}`,
+        tiktok: `@${el.influencer.tiktok}`,
+        youtube: `@${el.influencer.youtube}`,
+      }));
+      setFilteredData(res);
     }
   }, [data]);
   const save = async () => {
