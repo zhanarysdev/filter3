@@ -11,34 +11,41 @@ import useSWR from "swr";
 
 const labels = [
   {
-    key: "id",
-    title: "ID",
+    key: "avatar",
+    title: "Аватвр",
   },
   {
     key: "fullName",
-    title: "name",
+    title: "ФИO",
+  },
+  {
+    key: "username",
+    title: "username",
+  },
+  {
+    key: "socials",
+    title: "Cоц сети",
+  },
+  {
+    key: "credits",
+    title: "PayPal",
   },
   {
     key: "influencerStatus",
-    title: "status",
+    title: "Статус",
   },
 ];
-const data = [
-  {
-    id: "0",
-    name: "test",
-    status: "test",
-  },
-  {
-    id: "1",
-    name: "test1",
-    status: "test1",
-  },
-];
+// - Аватарка - avatar
+// - имя - fullname
+// - юзернейм - username
+// - соц сети - instagram: instagram, tiktok: tiktok, youtube: youtube
+// - платежная информация (Paypal), если он добавил после модерации - сейчас скажу
+// - статус - influencerStatus (потом на фронте декодируем в текст)
 
 export default function Moderation() {
   const [isOpen, setOpen] = useState<null | string>(null);
   const [status, setStatus] = useState<any>(null);
+  const [filteredData, setFilteredData] = useState<any>([]);
   const { data, isLoading, mutate } = useSWR(
     { url: "influencer/list", body: JSON.stringify({ page: 1 }) },
     fetcher
@@ -50,6 +57,11 @@ export default function Moderation() {
       setToken(window.localStorage.getItem("token"));
     }
   }, []);
+  useEffect(() => {
+    if (data?.items) {
+      setFilteredData(data.items);
+    }
+  }, [data]);
   const save = async () => {
     const res = await fetch("https://api.filter.li/api/v1/influencer/confirm", {
       method: "POST",
@@ -74,11 +86,7 @@ export default function Moderation() {
           <div className="text-2xl font-bold leading-7">Модерация</div>
         </div>
       </div>
-      <Table
-        data={data ? data.items : []}
-        labels={labels}
-        onEdit={(id) => setOpen(id)}
-      />
+      <Table data={filteredData} labels={labels} onEdit={(id) => setOpen(id)} />
       {isOpen &&
         createPortal(
           <Modal

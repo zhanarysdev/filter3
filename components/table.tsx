@@ -1,18 +1,13 @@
 "use client";
 import Link from "next/link";
 import { Icon } from "./icons";
-import { Filters } from "./filters";
+import Image from "next/image";
 
 export function Table({
   data,
   labels,
-  onDelete,
-  control,
   onEdit,
   goTo,
-  filters = true,
-  number,
-  sort,
 }: {
   number?: boolean;
   data: Record<string, string | number | any>[];
@@ -25,15 +20,8 @@ export function Table({
     link?: string;
     status?: boolean;
   }[];
-  onDelete?: (id: string) => void;
   onEdit?: (id: string) => void;
   goTo?: string;
-  control?: {
-    label: string;
-    action: () => void;
-  };
-  filters?: boolean;
-  sort?: string[];
 }) {
   const renderContent = (item, el, index) => {
     if (item.link) {
@@ -41,22 +29,39 @@ export function Table({
       return <Link href={`${item.link}${link[1]}`}>{el[item.key]}</Link>;
     }
 
-    if (item.timeStamp) {
-      return el[item.key].seconds;
+    if (item.key === "avatar") {
+      return (
+        <div className="relative h-[100px] w-[100px]">
+          <Image
+            src={el[item.key]}
+            fill
+            sizes="100% 100%"
+            alt={""}
+            objectFit="cover"
+            className="rounded-md"
+          />
+        </div>
+      );
     }
 
-    if (item.isObject) {
-      return el[item.key]?.name;
+    if (!el[item.key]) {
+      return "-";
     }
 
-    if (item.key === "id") {
-      return index + 1;
-    }
-    if (item.status) {
+    if (item.key === "influencerStatus" && el[item.key] == "1") {
       return (
         <div className="flex items-center gap-2">
           <div className="w-[8px] h-[8px] rounded-full bg-[#1BFF1B]"></div>{" "}
-          <span>{el[item.key]}</span>
+          <span>Принято</span>
+        </div>
+      );
+    }
+
+    if (item.key === "influencerStatus" && el[item.key] == "3") {
+      return (
+        <div className="flex items-center gap-2">
+          <div className="w-[8px] h-[8px] rounded-full bg-[#FF1B1F]"></div>{" "}
+          <span>Отклонeно</span>
         </div>
       );
     }
@@ -76,19 +81,18 @@ export function Table({
 
   return (
     <div className="flex flex-col gap-4">
-      {filters && <Filters sort={sort} labels={labels} control={control} />}
       <table>
         <thead>
           <tr>
             {labels.map(({ title, key }) => (
               <th
                 key={key}
-                className="text-[#AAAAAA] first-of-type:w-[44px] first-of-type:h-[44px]  border-b border-lightGrey font-semibold text-base leading-5 p-3 text-left"
+                className="text-[#AAAAAA]  border-b border-lightGrey font-semibold text-base leading-5 p-3 text-left"
               >
-                {title === "ID" && number ? "№" : title}
+                {title}
               </th>
             ))}
-            {(onDelete || onEdit || goTo) && (
+            {(onEdit || goTo) && (
               <th className="text-[#AAAAAA] border-b border-lightGrey font-semibold text-base leading-5 p-3 text-left">
                 Действия
               </th>
@@ -107,21 +111,13 @@ export function Table({
                       {renderContent(item, el, index)}
                     </td>
                   ))}
-                  {(onDelete || onEdit || goTo) && (
-                    <td className="flex gap-4 text-left border-b border-lightGrey font-semibold text-base px-3 py-2 leading-5 h-[45.5px]">
+                  {(onEdit || goTo) && (
+                    <td className="flex gap-4 text-left border-b border-lightGrey font-semibold text-base px-3 py-2 leading-5 h-[117px] items-center">
                       {goTo && (
                         <Link href={`${goTo}/${el.id}`}>
                           <Icon name="GoTo" />
                         </Link>
                       )}
-                      {onDelete && (
-                        <Icon
-                          name="Trash"
-                          onClick={() => onDelete(String(el.id))}
-                          className="cursor-pointer"
-                        />
-                      )}
-
                       {onEdit && (
                         <Icon
                           name="Edit"
