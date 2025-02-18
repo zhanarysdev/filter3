@@ -12,7 +12,7 @@ import useSWR from "swr";
 const labels = [
   {
     key: "avatar",
-    title: "Аватвр",
+    title: "Аватaр",
   },
   {
     key: "fullName",
@@ -91,7 +91,7 @@ export default function Moderation() {
   if (isLoading) return <Spinner />;
 
   return (
-    <div className="p-4">
+    <div className="p-4 overflow-auto">
       <div className="mb-16">
         <div className="flex flex-col gap-1">
           <div className="text-2xl font-bold leading-7">Модерация</div>
