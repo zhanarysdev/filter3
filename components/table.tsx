@@ -123,7 +123,7 @@ export function Table({
                     <td className="flex gap-4 text-left border-b border-lightGrey font-semibold text-base px-3 py-2 leading-5 h-[117px] items-center">
                       {goTo && (
                         <Link href={`${goTo}/${el.id}`}>
-                          <Icon name="GoTo" />
+                          <Icon name="GoTo" className="cursor-pointer" />
                         </Link>
                       )}
                       {onEdit && (

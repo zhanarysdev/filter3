@@ -46,8 +46,8 @@ export const Icon = ({
   const Result = icons[name];
   if (onClick) {
     return (
-      <div onClick={onClick}>
-        <Result className={className ?? ""} />
+      <div onClick={onClick} className="cursor-pointer">
+        <Result className="cursor-pointer" />
       </div>
     );
   }

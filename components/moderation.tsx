@@ -46,12 +46,6 @@ const labels = [
     title: "Статус",
   },
 ];
-// - Аватарка - avatar
-// - имя - fullname
-// - юзернейм - username
-// - соц сети - instagram: instagram, tiktok: tiktok, youtube: youtube
-// - платежная информация (Paypal), если он добавил после модерации - сейчас скажу
-// - статус - influencerStatus (потом на фронте декодируем в текст)
 
 export default function Moderation() {
   const [isOpen, setOpen] = useState<null | string>(null);
