@@ -39,16 +39,11 @@ export function Table({
 
     if (item.key === "avatar") {
       return (
-        <div className="relative h-[100px] w-[100px]">
-          <Image
-            src={el[item.key]}
-            fill
-            sizes="100% 100%"
-            alt={""}
-            objectFit="cover"
-            className="rounded-md"
-          />
-        </div>
+        <img
+          src={el[item.key]}
+          alt={""}
+          className="w-[100px] object-cover h-[100px] rounded-md"
+        />
       );
     }
 

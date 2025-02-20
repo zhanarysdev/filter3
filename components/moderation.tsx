@@ -38,7 +38,7 @@ const labels = [
     link: "https://www.youtube.com/",
   },
   {
-    key: "credits",
+    key: "paypal",
     title: "PayPal",
   },
   {
