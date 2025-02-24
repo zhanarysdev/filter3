@@ -62,9 +62,12 @@ export function Table({
 
     if (item.key === "influencerStatus" && el[item.key] == "3") {
       return (
-        <div className="flex items-center gap-2">
-          <div className="w-[8px] h-[8px] rounded-full bg-[#FF1B1F]"></div>{" "}
-          <span>Отклонeно</span>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <div className="w-[8px] h-[8px] rounded-full bg-[#FF1B1F]"></div>{" "}
+            <div>Отклонeно</div>
+          </div>
+          <div>{el.reason}</div>
         </div>
       );
     }
